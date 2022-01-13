@@ -12,3 +12,6 @@ mybatis:
   mapper-locations:
     - classpath:mapper/*Mapper.xml
     - classpath*:com/**/mapper/*Mapper.xml
+
+
+#druid和redis只是引入还没配置，本项目先搭起来再说

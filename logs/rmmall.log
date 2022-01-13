@@ -1,0 +1,15 @@
+[19:01:39.727][INFO][c.s.happyrmmall.mall.MallApplication][main] Starting MallApplication on LAPTOP-V4H9DOTD with PID 14772 (D:\code\happyrmmall-2.0.1\target\classes started by salmon in D:\code\happyrmmall-2.0.1)
+[19:01:39.727][INFO][c.s.happyrmmall.mall.MallApplication][main] No active profile set, falling back to default profiles: default
+[19:01:43.717][INFO][c.s.happyrmmall.mall.MallApplication][main] Started MallApplication in 4.601 seconds (JVM running for 6.808)
+[19:01:56.790][DEBUG][c.s.h.mall.dao.UserMapper.checkUsername][http-nio-8080-exec-1] ==>  Preparing: select count(1) from rmmall_user where username = ? 
+[19:01:56.822][DEBUG][c.s.h.mall.dao.UserMapper.checkUsername][http-nio-8080-exec-1] ==> Parameters: salmon(String)
+[19:01:56.870][DEBUG][c.s.h.mall.dao.UserMapper.checkUsername][http-nio-8080-exec-1] <==      Total: 1
+[19:01:56.878][DEBUG][c.s.h.mall.dao.UserMapper.selectLogin][http-nio-8080-exec-1] ==>  Preparing: SELECT id, username, password, email, phone, question, answer, role, create_time, update_time from rmmall_user where username = ? and password = ? 
+[19:01:56.878][DEBUG][c.s.h.mall.dao.UserMapper.selectLogin][http-nio-8080-exec-1] ==> Parameters: salmon(String), D1D4BB53F9523D86FDE34822D548D06B(String)
+[19:01:56.878][DEBUG][c.s.h.mall.dao.UserMapper.selectLogin][http-nio-8080-exec-1] <==      Total: 0
+[19:03:02.390][DEBUG][c.s.h.mall.dao.UserMapper.checkUsername][http-nio-8080-exec-2] ==>  Preparing: select count(1) from rmmall_user where username = ? 
+[19:03:02.390][DEBUG][c.s.h.mall.dao.UserMapper.checkUsername][http-nio-8080-exec-2] ==> Parameters: salmon(String)
+[19:03:02.398][DEBUG][c.s.h.mall.dao.UserMapper.checkUsername][http-nio-8080-exec-2] <==      Total: 1
+[19:03:02.398][DEBUG][c.s.h.mall.dao.UserMapper.selectLogin][http-nio-8080-exec-2] ==>  Preparing: SELECT id, username, password, email, phone, question, answer, role, create_time, update_time from rmmall_user where username = ? and password = ? 
+[19:03:02.398][DEBUG][c.s.h.mall.dao.UserMapper.selectLogin][http-nio-8080-exec-2] ==> Parameters: salmon(String), 5B34BF4B65B9CF4A0734F2F7B50D08A9(String)
+[19:03:02.406][DEBUG][c.s.h.mall.dao.UserMapper.selectLogin][http-nio-8080-exec-2] <==      Total: 1
