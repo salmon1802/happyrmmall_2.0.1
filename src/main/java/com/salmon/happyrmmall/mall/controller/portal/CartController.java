@@ -6,6 +6,7 @@ import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.pojo.User;
 import com.salmon.happyrmmall.mall.service.ICartService;
 import com.salmon.happyrmmall.mall.vo.CartVo;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpSession;
  * @date 2020-12-4 - 12:59
  * Created by Salmon
  */
+@Api(tags = "CartController", description = "购物车管理")
 @Controller
 @RequestMapping("/cart/")
 public class CartController {

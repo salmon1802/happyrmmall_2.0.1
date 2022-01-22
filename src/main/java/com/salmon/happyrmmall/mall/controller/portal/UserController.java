@@ -5,10 +5,9 @@ import com.salmon.happyrmmall.mall.common.ResponseCode;
 import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.pojo.User;
 import com.salmon.happyrmmall.mall.service.IUserService;
-import com.mysql.cj.Session;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpSession;
  * @date 2020-12-1 - 13:10
  * Created by Salmon
  */
-
+@Api(tags = "UserController", description = "用户管理")
 @Controller
 @RequestMapping("/user/")
 public class UserController {

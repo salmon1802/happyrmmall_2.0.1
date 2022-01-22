@@ -1,36 +1,53 @@
 package com.salmon.happyrmmall.mall.pojo;
 
+import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Order {
+public class Order implements Serializable {
+    @ApiModelProperty(value = "订单id")
     private Integer id;
 
+    @ApiModelProperty(value = "订单号")
     private Long orderNo;
 
+    @ApiModelProperty(value = "用户id")
     private Integer userId;
 
     private Integer shippingId;
 
+    @ApiModelProperty(value = "实际付款金额,单位是元,保留两位小数")
     private BigDecimal payment;
 
+    @ApiModelProperty(value = "支付类型,1-在线支付")
     private Integer paymentType;
 
+    @ApiModelProperty(value = "运费,单位是元")
     private Integer postage;
 
+    @ApiModelProperty(value = "订单状态:0-已取消-10-未付款，20-已付款，40-已发货，50-交易成功，60-交易关闭")
     private Integer status;
 
+    @ApiModelProperty(value = "支付时间")
     private Date paymentTime;
 
+    @ApiModelProperty(value = "发货时间")
     private Date sendTime;
 
+    @ApiModelProperty(value = "交易完成时间")
     private Date endTime;
 
+    @ApiModelProperty(value = "交易关闭时间")
     private Date closeTime;
 
+    @ApiModelProperty(value = "创建时间")
     private Date createTime;
 
+    @ApiModelProperty(value = "更新时间")
     private Date updateTime;
+
+    private static final long serialVersionUID = 1L;
 
     public Order(Integer id, Long orderNo, Integer userId, Integer shippingId, BigDecimal payment, Integer paymentType, Integer postage, Integer status, Date paymentTime, Date sendTime, Date endTime, Date closeTime, Date createTime, Date updateTime) {
         this.id = id;
@@ -163,5 +180,30 @@ public class Order {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", orderNo=").append(orderNo);
+        sb.append(", userId=").append(userId);
+        sb.append(", shippingId=").append(shippingId);
+        sb.append(", payment=").append(payment);
+        sb.append(", paymentType=").append(paymentType);
+        sb.append(", postage=").append(postage);
+        sb.append(", status=").append(status);
+        sb.append(", paymentTime=").append(paymentTime);
+        sb.append(", sendTime=").append(sendTime);
+        sb.append(", endTime=").append(endTime);
+        sb.append(", closeTime=").append(closeTime);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", updateTime=").append(updateTime);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

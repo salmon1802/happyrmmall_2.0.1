@@ -1,32 +1,48 @@
 package com.salmon.happyrmmall.mall.pojo;
 
+import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Product {
+public class Product implements Serializable {
+    @ApiModelProperty(value = "商品id")
     private Integer id;
 
+    @ApiModelProperty(value = "分类id,对应rmmall_category表的主键")
     private Integer categoryId;
 
+    @ApiModelProperty(value = "商品名称")
     private String name;
 
+    @ApiModelProperty(value = "商品副标题")
     private String subtitle;
 
+    @ApiModelProperty(value = "产品主图,url相对地址")
     private String mainImage;
 
+    @ApiModelProperty(value = "图片地址,json格式,扩展用")
     private String subImages;
 
+    @ApiModelProperty(value = "商品详情")
     private String detail;
 
+    @ApiModelProperty(value = "价格,单位-元保留两位小数")
     private BigDecimal price;
 
+    @ApiModelProperty(value = "库存数量")
     private Integer stock;
 
+    @ApiModelProperty(value = "商品状态.1-在售 2-下架 3-删除")
     private Integer status;
 
+    @ApiModelProperty(value = "创建时间")
     private Date createTime;
 
+    @ApiModelProperty(value = "更新时间")
     private Date updateTime;
+
+    private static final long serialVersionUID = 1L;
 
     public Product(Integer id, Integer categoryId, String name, String subtitle, String mainImage, String subImages, String detail, BigDecimal price, Integer stock, Integer status, Date createTime, Date updateTime) {
         this.id = id;
@@ -127,11 +143,11 @@ public class Product {
         this.status = status;
     }
 
-    public Date getcreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setcreateTime(Date createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
@@ -141,5 +157,28 @@ public class Product {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", categoryId=").append(categoryId);
+        sb.append(", name=").append(name);
+        sb.append(", subtitle=").append(subtitle);
+        sb.append(", mainImage=").append(mainImage);
+        sb.append(", subImages=").append(subImages);
+        sb.append(", detail=").append(detail);
+        sb.append(", price=").append(price);
+        sb.append(", stock=").append(stock);
+        sb.append(", status=").append(status);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", updateTime=").append(updateTime);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

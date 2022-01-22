@@ -1,4 +1,4 @@
-package com.salmon.happyrmmall.mall;
+package com.salmon.happyrmmall.mall.config;
 
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * @date 2022-1-10 - 16:05
  * Created by Salmon
+ * mybatis-generator启动类
  */
 public class Generator {
     public static void main(String[] args) throws Exception {

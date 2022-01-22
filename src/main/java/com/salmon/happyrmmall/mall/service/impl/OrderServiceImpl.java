@@ -186,7 +186,7 @@ public class OrderServiceImpl implements IOrderService {
         orderItemVo.setOrderNo(orderItem.getOrderNo());
         orderItemVo.setProductId(orderItem.getProductId());
         orderItemVo.setProductName(orderItem.getProductName());
-        orderItemVo.setProductImage(orderItem.getproductImage());
+        orderItemVo.setProductImage(orderItem.getProductImage());
         orderItemVo.setCurrentUnitPrice(orderItem.getCurrentUnitPrice());
         orderItemVo.setQuantity(orderItem.getQuantity());
         orderItemVo.setTotalPrice(orderItem.getTotalPrice());
@@ -314,7 +314,7 @@ public class OrderServiceImpl implements IOrderService {
             orderItem.setUserId(userId);
             orderItem.setProductId(product.getId());
             orderItem.setProductName(product.getName());
-            orderItem.setproductImage(product.getMainImage());
+            orderItem.setProductImage(product.getMainImage());
             orderItem.setCurrentUnitPrice(product.getPrice());
             orderItem.setQuantity(cartItem.getQuantity());
             orderItem.setTotalPrice(BigDecimalUtil.mul(product.getPrice().doubleValue(), cartItem.getQuantity()));

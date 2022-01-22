@@ -7,6 +7,7 @@ import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.pojo.Shipping;
 import com.salmon.happyrmmall.mall.pojo.User;
 import com.salmon.happyrmmall.mall.service.IShippingService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpSession;
  * @date 2020-12-5 - 12:19
  * Created by Salmon
  */
+@Api(tags = "ShippingController", description = "收货地址管理")
 @Controller
 @RequestMapping("/shipping/")
 public class ShippingController {

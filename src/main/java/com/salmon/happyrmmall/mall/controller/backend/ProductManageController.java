@@ -10,9 +10,9 @@ import com.salmon.happyrmmall.mall.service.IFileService;
 import com.salmon.happyrmmall.mall.service.IProductService;
 import com.salmon.happyrmmall.mall.service.IUserService;
 import com.salmon.happyrmmall.mall.util.PropertiesUtil;
+import io.swagger.annotations.Api;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,6 +28,7 @@ import java.util.Map;
  * @date 2020-12-3 - 12:24
  * Created by Salmon
  */
+@Api(tags = "ProductManageController", description = "管理员-商品管理")
 @Controller
 @RequestMapping("/manage/product")
 public class ProductManageController {

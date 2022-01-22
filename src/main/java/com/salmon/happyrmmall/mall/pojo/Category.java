@@ -1,22 +1,33 @@
 package com.salmon.happyrmmall.mall.pojo;
 
+import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Category {
+public class Category implements Serializable {
+    @ApiModelProperty(value = "类别Id")
     private Integer id;
 
+    @ApiModelProperty(value = "父类别id当id=0时说明是根节点,一级类别")
     private Integer parentId;
 
+    @ApiModelProperty(value = "类别名称")
     private String name;
 
+    @ApiModelProperty(value = "类别状态1-正常,2-已废弃")
     private Boolean status;
 
+    @ApiModelProperty(value = "排序编号,同类展示顺序,数值相等则自然排序")
     private Integer sortOrder;
 
+    @ApiModelProperty(value = "创建时间")
     private Date createTime;
 
+    @ApiModelProperty(value = "更新时间")
     private Date updateTime;
+
+    private static final long serialVersionUID = 1L;
 
     public Category(Integer id, Integer parentId, String name, Boolean status, Integer sortOrder, Date createTime, Date updateTime) {
         this.id = id;
@@ -72,11 +83,11 @@ public class Category {
         this.sortOrder = sortOrder;
     }
 
-    public Date getcreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setcreateTime(Date createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
@@ -86,6 +97,24 @@ public class Category {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", parentId=").append(parentId);
+        sb.append(", name=").append(name);
+        sb.append(", status=").append(status);
+        sb.append(", sortOrder=").append(sortOrder);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", updateTime=").append(updateTime);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 
     @Override

@@ -9,6 +9,7 @@ import com.salmon.happyrmmall.mall.common.ResponseCode;
 import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.pojo.User;
 import com.salmon.happyrmmall.mall.service.IOrderService;
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ import java.util.Map;
  * @date 2020-12-5 - 16:06
  * Created by Salmon
  */
+@Api(tags = "OrderController", description = "订单管理")
 @Controller
 @RequestMapping("/order/")
 public class OrderController {

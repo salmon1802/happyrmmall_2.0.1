@@ -1,7 +1,6 @@
 package com.salmon.happyrmmall.mall.common;
 
 import com.google.common.collect.Sets;
-import com.salmon.happyrmmall.mall.pojo.Product;
 
 import java.util.Set;
 

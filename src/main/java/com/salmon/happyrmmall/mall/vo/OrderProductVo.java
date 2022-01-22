@@ -1,7 +1,5 @@
 package com.salmon.happyrmmall.mall.vo;
 
-import com.salmon.happyrmmall.mall.pojo.OrderItem;
-
 import java.math.BigDecimal;
 import java.util.List;
 

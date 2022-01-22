@@ -6,6 +6,7 @@ import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.pojo.User;
 import com.salmon.happyrmmall.mall.service.ICategoryService;
 import com.salmon.happyrmmall.mall.service.IUserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpSession;
  * @date 2020-12-2 - 17:29
  * Created by Salmon
  */
-
+@Api(tags = "CategoryManageController", description = "管理员-商品种类管理")
 @Controller
 @RequestMapping("/manage/category")
 public class CategoryManageController {

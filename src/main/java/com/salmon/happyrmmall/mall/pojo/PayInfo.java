@@ -1,23 +1,34 @@
 package com.salmon.happyrmmall.mall.pojo;
 
+import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
 import java.util.Date;
 
-public class PayInfo {
+public class PayInfo implements Serializable {
     private Integer id;
 
+    @ApiModelProperty(value = "用户id")
     private Integer userId;
 
+    @ApiModelProperty(value = "订单号")
     private Long orderNo;
 
+    @ApiModelProperty(value = "支付平台:1-支付宝,2-微信")
     private Integer payPlatform;
 
+    @ApiModelProperty(value = "支付宝支付流水号")
     private String platformNumber;
 
+    @ApiModelProperty(value = "支付宝支付状态")
     private String platformStatus;
 
+    @ApiModelProperty(value = "创建时间")
     private Date createTime;
 
+    @ApiModelProperty(value = "更新时间")
     private Date updateTime;
+
+    private static final long serialVersionUID = 1L;
 
     public PayInfo(Integer id, Integer userId, Long orderNo, Integer payPlatform, String platformNumber, String platformStatus, Date createTime, Date updateTime) {
         this.id = id;
@@ -96,5 +107,24 @@ public class PayInfo {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", userId=").append(userId);
+        sb.append(", orderNo=").append(orderNo);
+        sb.append(", payPlatform=").append(payPlatform);
+        sb.append(", platformNumber=").append(platformNumber);
+        sb.append(", platformStatus=").append(platformStatus);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", updateTime=").append(updateTime);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

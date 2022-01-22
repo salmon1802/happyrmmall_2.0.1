@@ -4,6 +4,7 @@ import com.salmon.happyrmmall.mall.common.Const;
 import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.pojo.User;
 import com.salmon.happyrmmall.mall.service.IUserService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpSession;
  * @date 2020-12-2 - 12:38
  * Created by Salmon
  */
+@Api(tags = "UserManageController", description = "管理员-用户管理")
 @Controller
 @RequestMapping("/manage/user")
 public class UserManageController {

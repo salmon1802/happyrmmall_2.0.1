@@ -8,6 +8,7 @@ import com.salmon.happyrmmall.mall.pojo.User;
 import com.salmon.happyrmmall.mall.service.IOrderService;
 import com.salmon.happyrmmall.mall.service.IUserService;
 import com.salmon.happyrmmall.mall.vo.OrderVo;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,7 @@ import javax.servlet.http.HttpSession;
  * @date 2020-12-6 - 19:15
  * Created by Salmon
  */
-
+@Api(tags = "OrderManageController", description = "管理员-管理用户订单")
 @Controller
 @RequestMapping("/manage/order")
 public class OrderManageController {

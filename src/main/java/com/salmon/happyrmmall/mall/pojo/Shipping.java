@@ -1,31 +1,44 @@
 package com.salmon.happyrmmall.mall.pojo;
 
+import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Shipping {
+public class Shipping implements Serializable {
     private Integer id;
 
+    @ApiModelProperty(value = "用户id")
     private Integer userId;
 
+    @ApiModelProperty(value = "收货姓名")
     private String receiverName;
 
+    @ApiModelProperty(value = "收货固定电话")
     private String receiverPhone;
 
+    @ApiModelProperty(value = "收货移动电话")
     private String receiverMobile;
 
+    @ApiModelProperty(value = "省份")
     private String receiverProvince;
 
+    @ApiModelProperty(value = "城市")
     private String receiverCity;
 
+    @ApiModelProperty(value = "区/县")
     private String receiverDistrict;
 
+    @ApiModelProperty(value = "详细地址")
     private String receiverAddress;
 
+    @ApiModelProperty(value = "邮编")
     private String receiverZip;
 
     private Date createTime;
 
     private Date updateTime;
+
+    private static final long serialVersionUID = 1L;
 
     public Shipping(Integer id, Integer userId, String receiverName, String receiverPhone, String receiverMobile, String receiverProvince, String receiverCity, String receiverDistrict, String receiverAddress, String receiverZip, Date createTime, Date updateTime) {
         this.id = id;
@@ -140,5 +153,28 @@ public class Shipping {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", userId=").append(userId);
+        sb.append(", receiverName=").append(receiverName);
+        sb.append(", receiverPhone=").append(receiverPhone);
+        sb.append(", receiverMobile=").append(receiverMobile);
+        sb.append(", receiverProvince=").append(receiverProvince);
+        sb.append(", receiverCity=").append(receiverCity);
+        sb.append(", receiverDistrict=").append(receiverDistrict);
+        sb.append(", receiverAddress=").append(receiverAddress);
+        sb.append(", receiverZip=").append(receiverZip);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", updateTime=").append(updateTime);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

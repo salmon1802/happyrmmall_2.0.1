@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.service.IProductService;
 import com.salmon.happyrmmall.mall.vo.ProductDetailVo;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date 2020-12-3 - 20:12
  * Created by Salmon
  */
-
+@Api(tags = "ProductController", description = "产品详情与模糊查询")
 @Controller
 @RequestMapping("/product/")
 public class ProductController {
