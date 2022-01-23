@@ -230,7 +230,7 @@
         <!--按如下方式引入每一个第三方的jar包，其中${project.basedir}指当前项目的根目录-->
         <dependency>
             <groupId>alipay</groupId>
-            <artifactId>mall</artifactId>
+            <artifactId>alipay-trade-sdk</artifactId>
             <scope>system</scope>
             <version>1.0</version>
             <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/alipay-trade-sdk-20161215.jar</systemPath>
@@ -238,7 +238,7 @@
 
         <dependency>
             <groupId>alipay</groupId>
-            <artifactId>mall</artifactId>
+            <artifactId>alipay-sdk-java</artifactId>
             <scope>system</scope>
             <version>1.0</version>
             <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/alipay-sdk-java20161213173952.jar</systemPath>
