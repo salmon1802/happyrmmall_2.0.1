@@ -219,6 +219,22 @@
             <version>2.3.1</version>
         </-dependency -->
 
+        <!--按如下方式引入每一个第三方的jar包，其中${project.basedir}指当前项目的根目录-->
+        <dependency>
+            <groupId>alipay</groupId>
+            <artifactId>mall</artifactId>
+            <scope>system</scope>
+            <version>1.0</version>
+            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/alipay-trade-sdk-20161215.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>alipay</groupId>
+            <artifactId>mall</artifactId>
+            <scope>system</scope>
+            <version>1.0</version>
+            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/alipay-sdk-java20161213173952.jar</systemPath>
+        </dependency>
 
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -245,6 +261,11 @@
             <version>2.7.0</version>
         </dependency>
 
+
+
+
+
+
     </dependencies>
 
 
@@ -265,18 +286,29 @@
                 </configuration>
             </plugin>
 
+            <!--如果是打jar包，则需在build的plugins中添加如下配置-->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <encoding>UTF-8</encoding>
-                    <compilerArguments>
-                        <extdirs>${project.basedir}/src/main/webapp/WEB-INF/lib</extdirs>
-                    </compilerArguments>
+                    <!--值为true是指打包时包含scope为system的第三方Jar包-->
+                    <includeSystemScope>true</includeSystemScope>
                 </configuration>
             </plugin>
+
+<!--            war包：-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <source>1.8</source>-->
+<!--                    <target>1.8</target>-->
+<!--                    <encoding>UTF-8</encoding>-->
+<!--                    <compilerArguments>-->
+<!--                        <extdirs>${project.basedir}/src/main/webapp/WEB-INF/lib</extdirs>-->
+<!--                    </compilerArguments>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
