@@ -219,12 +219,12 @@
             <version>2.3.1</version>
         </-dependency -->
              
-<!--         <!-- https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java -->
-        <dependency>
-           <groupId>com.alipay.sdk</groupId>
-           <artifactId>alipay-sdk-java</artifactId>
-           <version>4.22.30.ALL</version>
-        </dependency> -->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java &ndash;&gt;-->
+<!--        <dependency>-->
+<!--           <groupId>com.alipay.sdk</groupId>-->
+<!--           <artifactId>alipay-sdk-java</artifactId>-->
+<!--           <version>4.22.30.ALL</version>-->
+<!--        </dependency>-->
 
 
         <!--按如下方式引入每一个第三方的jar包，其中${project.basedir}指当前项目的根目录-->
