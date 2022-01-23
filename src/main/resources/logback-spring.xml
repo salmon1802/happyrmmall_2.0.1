@@ -13,11 +13,11 @@
     </appender>
 
     <appender name="rmmall" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>D:\code\happyrmmall-2.0.1\logs\rmmall.log</File>
-<!--        <File>/developer/logs/rmmall.log</File>-->
+<!--        <File>D:\code\happyrmmall-2.0.1\logs\rmmall.log</File>-->
+        <File>/developer/logs/rmmall.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-<!--            <fileNamePattern>/developer/apache-tomcat-8.5.60/logs/mmall.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
-            <fileNamePattern>D:\code\happyrmmall-2.0.1\logs\rmmall.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <fileNamePattern>/developer/logs/mmall.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
+<!--            <fileNamePattern>D:\code\happyrmmall-2.0.1\logs\rmmall.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
             <maxHistory>10</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -28,11 +28,11 @@
 
     <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!--<File>d:/mmalllog/error.log</File>-->
-<!--        <File>/developer/apache-tomcat-8.5.60/logs/error.log</File>-->
-        <File>D:\code\happyrmmall-2.0.1\logs\error.log</File>
+        <File>/developer/logs/error.log</File>
+<!--        <File>D:\code\happyrmmall-2.0.1\logs\error.log</File>-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>D:\code\happyrmmall-2.0.1\logs\error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
-<!--            <fileNamePattern>/developer/apache-tomcat-8.5.60/logs/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
+<!--            <fileNamePattern>D:\code\happyrmmall-2.0.1\logs\error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
+            <fileNamePattern>/developer/logs/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
         <encoder>
