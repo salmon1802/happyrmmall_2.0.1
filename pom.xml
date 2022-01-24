@@ -229,7 +229,7 @@
 
         <!--按如下方式引入每一个第三方的jar包，其中${project.basedir}指当前项目的根目录-->
         <dependency>
-            <groupId>alipay</groupId>
+            <groupId>alipay-trade</groupId>
             <artifactId>alipay-trade-sdk</artifactId>
             <scope>system</scope>
             <version>1.0</version>
@@ -271,9 +271,6 @@
 
 
 
-
-
-
     </dependencies>
 
 
@@ -285,6 +282,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <!--值为true是指打包时包含scope为system的第三方Jar包-->
+                    <includeSystemScope>true</includeSystemScope>
+
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -294,15 +294,6 @@
                 </configuration>
             </plugin>
 
-            <!--如果是打jar包，则需在build的plugins中添加如下配置-->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <!--值为true是指打包时包含scope为system的第三方Jar包-->
-                    <includeSystemScope>true</includeSystemScope>
-                </configuration>
-            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
