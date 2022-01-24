@@ -15,4 +15,11 @@ mybatis:
     - classpath*:com/**/mapper/*Mapper.xml
 
 
+springfox:
+  documentation:
+    swagger:
+      v2:
+         host: 118.31.249.87:8080
+
+
 #druid和redis只是引入还没配置，本项目先搭起来再说
