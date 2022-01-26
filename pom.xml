@@ -30,6 +30,17 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--                    <artifactId>jackson-databind</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -213,11 +224,14 @@
             <artifactId>core</artifactId>
             <version>2.1</version>
         </dependency>
-        <!--dependency> 这里springboot自带了
+
+        <!-- 这里gson被springboot整合了，当使用支付宝官网依赖时会出现500状态错误，将版本更新到2.6完美解决-->
+        <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.3.1</version>
-        </-dependency -->
+            <version>2.6</version>
+            <scope>runtime</scope>
+        </dependency>
              
 <!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java &ndash;&gt;-->
 <!--        <dependency>-->
