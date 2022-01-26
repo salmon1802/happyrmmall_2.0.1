@@ -31,7 +31,7 @@ public class FTPUtil {
         logger.info("开始连接ftp服务器");
         //传入到ftp服务器的img文件夹下
         boolean result = ftpUtil.uploadFile("img",fileList);
-        logger.info("开始连接ftp服务器,结束上传,上传结果:{}");
+        logger.info("开始连接ftp服务器,结束上传,上传结果:{" + String.valueOf(result) +"}");
         return result;
     }
 
