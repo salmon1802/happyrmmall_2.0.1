@@ -157,6 +157,8 @@ public class OrderController {
     @RequestMapping("alipay_callback.do")
     @ResponseBody
     public Object alipayCallback(HttpServletRequest request){
+        logger.info("开始进行支付宝回调");
+
         Map<String,String> params = Maps.newHashMap();
 
         Map requestParams = request.getParameterMap();
@@ -186,12 +188,13 @@ public class OrderController {
 
         //验证各种数据
 
-
         ServerResponse serverResponse = iOrderService.aliCallback(params);
         if(serverResponse.isSuccess()){
+            logger.info("回调成功");
             return Const.AlipayCallback.RESPONSE_SUCCESS;
         }
 
+        logger.info("回调失败");
         return Const.AlipayCallback.RESPONSE_FAILED;
     }
 

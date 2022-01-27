@@ -2,9 +2,11 @@ package com.salmon.happyrmmall.mall.dao;
 
 import com.salmon.happyrmmall.mall.pojo.Category;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 @Mapper
 public interface CategoryMapper {
     int deleteByPrimaryKey(Integer id);

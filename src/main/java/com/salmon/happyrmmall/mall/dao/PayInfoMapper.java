@@ -2,7 +2,9 @@ package com.salmon.happyrmmall.mall.dao;
 
 import com.salmon.happyrmmall.mall.pojo.PayInfo;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
+@Repository
 @Mapper
 public interface PayInfoMapper {
     int deleteByPrimaryKey(Integer id);

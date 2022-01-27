@@ -3,9 +3,11 @@ package com.salmon.happyrmmall.mall.dao;
 import com.salmon.happyrmmall.mall.pojo.Order;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 @Mapper
 public interface OrderMapper {
     int deleteByPrimaryKey(Integer id);

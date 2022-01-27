@@ -3,9 +3,12 @@ package com.salmon.happyrmmall.mall.dao;
 import com.salmon.happyrmmall.mall.pojo.Shipping;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
+@Repository
 @Mapper
 public interface ShippingMapper {
     int deleteByPrimaryKey(Integer id);
