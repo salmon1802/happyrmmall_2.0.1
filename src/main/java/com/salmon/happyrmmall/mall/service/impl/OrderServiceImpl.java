@@ -163,7 +163,7 @@ public class OrderServiceImpl implements IOrderService {
         orderVo.setCreateTime(DateTimeUtil.dateToStr(order.getCreateTime()));
         orderVo.setCloseTime(DateTimeUtil.dateToStr(order.getCloseTime()));
 
-        orderVo.setImageHost(PropertiesUtil.getProperty("http://img.happymmall.com/", "http://img.happymmall.com/"));
+        orderVo.setImageHost(PropertiesUtil.getProperty("http://img.happyrmmall.cn/", "url"));
 
         List<OrderItemVo> orderItemVoList = Lists.newArrayList();
         for(OrderItem orderItem : orderItemList){
@@ -377,7 +377,7 @@ public class OrderServiceImpl implements IOrderService {
         }
         orderProductVo.setProductTotalPrice(payment);
         orderProductVo.setOrderItemVoList(orderItemVoList);
-        orderProductVo.setImageHost(PropertiesUtil.getProperty("http://img.happymmall.com/", "http://img.happymmall.com/"));
+        orderProductVo.setImageHost(PropertiesUtil.getProperty("http://img.happyrmmall.cn/", "url"));
         return ServerResponse.createBySuccess(orderProductVo);
 
     }
