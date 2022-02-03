@@ -163,7 +163,7 @@ public class OrderServiceImpl implements IOrderService {
         orderVo.setCreateTime(DateTimeUtil.dateToStr(order.getCreateTime()));
         orderVo.setCloseTime(DateTimeUtil.dateToStr(order.getCloseTime()));
 
-        orderVo.setImageHost(PropertiesUtil.getProperty("http://img.happyrmmall.cn/"));
+        orderVo.setImageHost(PropertiesUtil.getProperty("ftp.server.http.prefix"));
 
         List<OrderItemVo> orderItemVoList = Lists.newArrayList();
         for(OrderItem orderItem : orderItemList){
@@ -377,7 +377,7 @@ public class OrderServiceImpl implements IOrderService {
         }
         orderProductVo.setProductTotalPrice(payment);
         orderProductVo.setOrderItemVoList(orderItemVoList);
-        orderProductVo.setImageHost(PropertiesUtil.getProperty("http://img.happyrmmall.cn/"));
+        orderProductVo.setImageHost(PropertiesUtil.getProperty("ftp.server.http.prefix"));
         return ServerResponse.createBySuccess(orderProductVo);
 
     }
