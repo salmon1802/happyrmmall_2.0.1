@@ -121,7 +121,7 @@ public class ProductServiceImpl implements IProductService {
         productDetailVo.setStatus(product.getStatus());
         productDetailVo.setStock(product.getStock());
 
-        productDetailVo.setImageHost(PropertiesUtil.getProperty("http://img.happyrmmall.cn/", "url"));
+        productDetailVo.setImageHost(PropertiesUtil.getProperty("http://img.happyrmmall.cn/"));
 
         Category category = categoryMapper.selectByPrimaryKey(product.getCategoryId());
         if(category == null){
@@ -166,7 +166,7 @@ public class ProductServiceImpl implements IProductService {
         productListVo.setId(product.getId());
         productListVo.setName(product.getName());
         productListVo.setCategoryId(product.getCategoryId());
-        productListVo.setImageHost(PropertiesUtil.getProperty("http://img.happyrmmall.cn/","url"));
+        productListVo.setImageHost(PropertiesUtil.getProperty("http://img.happyrmmall.cn/"));
         productListVo.setMainImage(product.getMainImage());
         productListVo.setPrice(product.getPrice());
         productListVo.setSubtitle(product.getSubtitle());
