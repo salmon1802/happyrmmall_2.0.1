@@ -1,10 +1,12 @@
 package com.salmon.happyrmmall.mall.vo;
 
+import java.io.Serializable;
+
 /**
  * @date 2020-12-6 - 15:20
  * Created by Salmon
  */
-public class ShippingVo {
+public class ShippingVo implements Serializable {
 
     private String receiverName;
 
@@ -21,6 +23,8 @@ public class ShippingVo {
     private String receiverAddress;
 
     private String receiverZip;
+
+    private static final long serialVersionUID = 1L;
 
     public String getReceiverName() {
         return receiverName;

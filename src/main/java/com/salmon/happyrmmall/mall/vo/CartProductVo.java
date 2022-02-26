@@ -1,12 +1,13 @@
 package com.salmon.happyrmmall.mall.vo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  * @date 2020-12-4 - 13:18
  * Created by Salmon
  */
-public class CartProductVo {
+public class CartProductVo implements Serializable {
 
     //结合了产品和购物车的一个抽象对象
     private Integer Id;
@@ -28,6 +29,8 @@ public class CartProductVo {
     private Integer productChecked;//此商品是否勾选
 
     private String limitQuantity;//限制数量的一个返回结果
+
+    private static final long serialVersionUID = 1L;
 
     public Integer getId() {
         return Id;

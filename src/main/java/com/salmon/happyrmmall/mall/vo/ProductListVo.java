@@ -1,12 +1,13 @@
 package com.salmon.happyrmmall.mall.vo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  * @date 2020-12-3 - 16:57
  * Created by Salmon
  */
-public class ProductListVo {
+public class ProductListVo implements Serializable {
 
     private Integer id;
 
@@ -23,6 +24,8 @@ public class ProductListVo {
     private Integer status;
 
     private String imageHost;
+
+    private static final long serialVersionUID = 1L;
 
     public Integer getId() {
         return id;

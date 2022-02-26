@@ -1,5 +1,6 @@
 package com.salmon.happyrmmall.mall.vo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -7,12 +8,14 @@ import java.util.List;
  * @date 2020-12-4 - 13:22
  * Created by Salmon
  */
-public class CartVo {
+public class CartVo implements Serializable {
 
     List<CartProductVo> cartProductVoList;
     private BigDecimal cartTotalPrice;
     private Boolean allChecked;//是否已经勾选
     private String imageHost;
+
+    private static final long serialVersionUID = 1L;
 
     public List<CartProductVo> getCartProductVoList() {
         return cartProductVoList;

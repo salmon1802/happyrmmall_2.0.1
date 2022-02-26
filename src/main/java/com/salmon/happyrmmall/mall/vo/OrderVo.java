@@ -1,5 +1,6 @@
 package com.salmon.happyrmmall.mall.vo;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * @date 2020-12-6 - 15:11
  * Created by Salmon
  */
-public class OrderVo {
+public class OrderVo implements Serializable {
 
     private Long orderNo;
 
@@ -43,6 +44,8 @@ public class OrderVo {
     private String receiveName;
 
     private ShippingVo shippingVo;
+
+    private static final long serialVersionUID = 1L;
 
     public Long getOrderNo() {
         return orderNo;

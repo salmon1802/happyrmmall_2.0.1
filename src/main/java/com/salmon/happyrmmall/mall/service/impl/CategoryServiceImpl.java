@@ -122,7 +122,7 @@ public class CategoryServiceImpl implements ICategoryService {
         }
         //查找子节点
         List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(categoryId);
-        for (Category categoryItem : categoryList){
+        for (Category categoryItem : categoryList){ //foreach默认当被遍历集合为空时自动跳出循环
             findChildCategory(categorySet, categoryItem.getId());
         }
         return categorySet;
