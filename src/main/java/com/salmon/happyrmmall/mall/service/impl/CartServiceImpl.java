@@ -81,8 +81,9 @@ public class CartServiceImpl implements ICartService {
         Cart cart = cartMapper.selectCartByUserIdProductId(userId, productId);
         if(cart != null){
             cart.setQuantity(count);
+            //修复了一个bug，商品在购物车中无法更新购买数量
+            cartMapper.updateByPrimaryKeySelective(cart);
         }
-
         return this.list(userId);
     }
 

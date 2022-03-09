@@ -131,7 +131,7 @@ public class ProductManageController {
 
 
     /**
-     * 根据产品名称和id查询(名称或id可以为空)
+     * 根据产品名称和id查询(名称或id可以为空,名称为模糊查询)
      * @param session
      * @param productName
      * @param productId

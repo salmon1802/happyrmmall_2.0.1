@@ -142,7 +142,7 @@ public class ProductServiceImpl implements IProductService {
      * @param pageSize
      * @return
      */
-    public ServerResponse getProductList(int pageNum,int pageSize){
+    public ServerResponse<PageInfo> getProductList(int pageNum,int pageSize){
         //startPage--start
         //填充自己的sql查询逻辑
         //pageHelper-收尾
@@ -221,7 +221,7 @@ public class ProductServiceImpl implements IProductService {
     }
 
     /**
-     * 客户根据产品种类id查询商品
+     * 客户根据产品种类id查询商品，keyword为模糊查询
      * @param keyword
      * @param categoryId
      * @param pageNum

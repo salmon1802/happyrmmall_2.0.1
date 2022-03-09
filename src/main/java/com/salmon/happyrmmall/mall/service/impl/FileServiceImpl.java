@@ -55,7 +55,7 @@ public class FileServiceImpl implements IFileService {
 
         try {
             file.transferTo(targetFile); //文件上传成功了
-            FTPUtil.uploadFile(Lists.newArrayList(targetFile));//已经上传到ftp服务器上
+            FTPUtil.uploadFile(Lists.newArrayList(targetFile));//将targetFile上传到自己的ftp服务器上
             logger.info("上传成功！！！");
             //上传完之后，删除upload下面的文件
             //targetFile.delete();

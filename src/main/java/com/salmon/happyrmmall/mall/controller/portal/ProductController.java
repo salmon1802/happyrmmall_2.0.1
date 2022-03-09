@@ -30,6 +30,15 @@ public class ProductController {
         return iProductService.getProductDetail(productId);
     }
 
+    /**
+     * 一个keyword模糊查询，
+     * @param keyword
+     * @param categoryId
+     * @param pageNum
+     * @param pageSize
+     * @param orderBy
+     * @return
+     */
     @RequestMapping("list.do")
     @ResponseBody
     public ServerResponse<PageInfo> list(@RequestParam(value = "keyword", required = false) String keyword,

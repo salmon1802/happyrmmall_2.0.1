@@ -83,13 +83,6 @@ public class FTPUtil {
 
 
 
-
-
-
-
-
-
-
     private String ip;
     private int port;
     private String user;
