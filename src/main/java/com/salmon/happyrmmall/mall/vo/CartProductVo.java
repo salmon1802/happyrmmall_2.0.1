@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
+ * 将product表与cart表结合起来
  * @date 2020-12-4 - 13:18
  * Created by Salmon
  */

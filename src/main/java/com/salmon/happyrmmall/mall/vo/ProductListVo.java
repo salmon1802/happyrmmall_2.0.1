@@ -4,9 +4,12 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
+ * 返回给商品选择页的vo对象
  * @date 2020-12-3 - 16:57
  * Created by Salmon
  */
+
+
 public class ProductListVo implements Serializable {
 
     private Integer id;

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
+ * 作为orderProductVO和orderVO的补充
  * @date 2020-12-6 - 15:16
  * Created by Salmon
  */

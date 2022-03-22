@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
+ * 返回给商品详情页
  * @date 2020-12-3 - 13:32
  * Created by Salmon
  */

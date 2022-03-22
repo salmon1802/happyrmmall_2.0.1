@@ -3,6 +3,7 @@ package com.salmon.happyrmmall.mall.vo;
 import java.io.Serializable;
 
 /**
+ * 返回给订单详情页
  * @date 2020-12-6 - 15:20
  * Created by Salmon
  */
