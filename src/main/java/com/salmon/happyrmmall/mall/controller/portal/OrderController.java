@@ -37,6 +37,8 @@ public class OrderController {
     @Autowired
     private IOrderService iOrderService;
 
+
+    //TODO 发现一个bug当购物车中商品被部分选择时，下单后依旧会清空全部购物车购买所有商品
     /**
      * 创建订单
      * @param session
@@ -186,7 +188,7 @@ public class OrderController {
             e.printStackTrace();
         }
 
-        //验证各种数据
+        //todo 验证各种数据
 
         ServerResponse serverResponse = iOrderService.aliCallback(params);
         if(serverResponse.isSuccess()){

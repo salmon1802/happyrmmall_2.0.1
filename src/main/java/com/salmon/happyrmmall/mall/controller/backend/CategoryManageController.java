@@ -80,7 +80,7 @@ public class CategoryManageController {
     }
 
     /**
-     * 查找节点
+     * 查找所有子分类节点
      * @param session
      * @param categoryId
      * @return
