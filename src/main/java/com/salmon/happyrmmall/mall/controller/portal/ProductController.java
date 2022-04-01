@@ -10,13 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @date 2020-12-3 - 20:12
  * Created by Salmon
  */
 @Api(tags = "ProductController", description = "产品详情与模糊查询")
-@Controller
+@RestController
 @RequestMapping("/product/")
 public class ProductController {
 
@@ -25,7 +26,6 @@ public class ProductController {
 
 
     @RequestMapping("detail.do")
-    @ResponseBody
     public ServerResponse<ProductDetailVo> detail(Integer productId){
         return iProductService.getProductDetail(productId);
     }
@@ -40,7 +40,6 @@ public class ProductController {
      * @return
      */
     @RequestMapping("list.do")
-    @ResponseBody
     public ServerResponse<PageInfo> list(@RequestParam(value = "keyword", required = false) String keyword,
                                          @RequestParam(value = "categoryId", required = false) Integer categoryId,
                                          @RequestParam(value = "pageNum", defaultValue = "1") int pageNum,

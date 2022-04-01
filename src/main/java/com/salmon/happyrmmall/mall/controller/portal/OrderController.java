@@ -17,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -28,7 +29,7 @@ import java.util.Map;
  * Created by Salmon
  */
 @Api(tags = "OrderController", description = "订单管理")
-@Controller
+@RestController
 @RequestMapping("/order/")
 public class OrderController {
 
@@ -46,7 +47,6 @@ public class OrderController {
      * @return
      */
     @RequestMapping("create.do")
-    @ResponseBody
     public ServerResponse create(HttpSession session, Integer shippingId){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -63,7 +63,6 @@ public class OrderController {
      * @return
      */
     @RequestMapping("cancel.do")
-    @ResponseBody
     public ServerResponse cancel(HttpSession session, Long orderNo){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -80,7 +79,6 @@ public class OrderController {
      * @return
      */
     @RequestMapping("get_order_cart_product.do")
-    @ResponseBody
     public ServerResponse getOrderCartProduct(HttpSession session){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -97,7 +95,6 @@ public class OrderController {
      * @return
      */
     @RequestMapping("detail.do")
-    @ResponseBody
     public ServerResponse detail(HttpSession session,Long orderNo){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -115,7 +112,6 @@ public class OrderController {
      * @return
      */
     @RequestMapping("list.do")
-    @ResponseBody
     public ServerResponse list(HttpSession session, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -140,7 +136,6 @@ public class OrderController {
      * @return
      */
     @RequestMapping("pay.do")
-    @ResponseBody
     public ServerResponse pay(HttpSession session, Long orderNo, HttpServletRequest request){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -157,7 +152,6 @@ public class OrderController {
      * @return
      */
     @RequestMapping("alipay_callback.do")
-    @ResponseBody
     public Object alipayCallback(HttpServletRequest request){
         logger.info("开始进行支付宝回调");
 
@@ -208,7 +202,6 @@ public class OrderController {
      * @return
      */
     @RequestMapping("query_order_pay_status.do")
-    @ResponseBody
     public ServerResponse<Boolean> queryOrderPayStatus(HttpSession session, Long orderNo){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {

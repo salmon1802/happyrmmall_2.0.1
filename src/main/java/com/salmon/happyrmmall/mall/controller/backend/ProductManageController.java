@@ -17,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +30,7 @@ import java.util.Map;
  * Created by Salmon
  */
 @Api(tags = "ProductManageController", description = "管理员-商品管理")
-@Controller
+@RestController
 @RequestMapping("/manage/product")
 public class ProductManageController {
 
@@ -49,7 +50,6 @@ public class ProductManageController {
      * @return
      */
     @RequestMapping("save.do")
-    @ResponseBody
     public ServerResponse productSave(HttpSession session, Product product){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -70,7 +70,6 @@ public class ProductManageController {
      * @return
      */
     @RequestMapping("set_sale_status.do")
-    @ResponseBody
     public ServerResponse setSaleStatus(HttpSession session, Integer productId, Integer status){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -92,7 +91,6 @@ public class ProductManageController {
      * @return
      */
     @RequestMapping("detail.do")
-    @ResponseBody
     public ServerResponse getDetail(HttpSession session, Integer productId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -115,7 +113,6 @@ public class ProductManageController {
      * @return
      */
     @RequestMapping("list.do")
-    @ResponseBody
     public ServerResponse getList(HttpSession session, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -140,7 +137,6 @@ public class ProductManageController {
      * @return
      */
     @RequestMapping("search.do")
-    @ResponseBody
     public ServerResponse productSearch(HttpSession session, String productName,Integer productId,@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -161,7 +157,6 @@ public class ProductManageController {
      * @return
      */
     @RequestMapping("upload.do")
-    @ResponseBody
     public ServerResponse upload(HttpSession session,@RequestParam(value = "upload_file",required = false) MultipartFile file, HttpServletRequest request){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -190,7 +185,6 @@ public class ProductManageController {
      * @return
      */
     @RequestMapping("richtext_img_upload.do")
-    @ResponseBody
     public Map richtextImgUpload(HttpSession session, @RequestParam(value = "upload_file",required = false) MultipartFile file, HttpServletRequest request, HttpServletResponse response){
         Map resultMap = Maps.newHashMap();
         User user = (User)session.getAttribute(Const.CURRENT_USER);

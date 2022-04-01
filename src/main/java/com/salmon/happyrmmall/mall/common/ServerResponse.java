@@ -6,6 +6,7 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 import java.io.Serializable;
 
 /**
+ * 统一相应类
  * @date 2020-12-1 - 13:19
  * Created by Salmon
  */

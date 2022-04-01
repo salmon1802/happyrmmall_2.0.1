@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 
@@ -21,7 +22,7 @@ import javax.servlet.http.HttpSession;
  * Created by Salmon
  */
 @Api(tags = "ShippingController", description = "收货地址管理")
-@Controller
+@RestController
 @RequestMapping("/shipping/")
 public class ShippingController {
 
@@ -35,7 +36,6 @@ public class ShippingController {
      * @return
      */
     @RequestMapping("add.do")
-    @ResponseBody
     public ServerResponse add(HttpSession session, Shipping shipping){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -52,7 +52,6 @@ public class ShippingController {
      * @return
      */
     @RequestMapping("del.do")
-    @ResponseBody
     public ServerResponse del(HttpSession session, Integer shippingId){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -69,7 +68,6 @@ public class ShippingController {
      * @return
      */
     @RequestMapping("update.do")
-    @ResponseBody
     public ServerResponse update(HttpSession session, Shipping shipping){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -85,7 +83,6 @@ public class ShippingController {
      * @return
      */
     @RequestMapping("select.do")
-    @ResponseBody
     public ServerResponse<Shipping> select(HttpSession session, Integer shippingId){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -103,7 +100,6 @@ public class ShippingController {
      * @return
      */
     @RequestMapping("list.do")
-    @ResponseBody
     public ServerResponse<PageInfo> list(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                                          @RequestParam(value = "pageSize",defaultValue = "10") int pageSize,
                                          HttpSession session){
