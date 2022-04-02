@@ -49,7 +49,7 @@ public class CartController {
      * @param productId
      * @return
      */
-    @RequestMapping(value = "add.do",method = RequestMethod.POST)
+    @RequestMapping(value = "add.do",method = RequestMethod.GET)
     public ServerResponse<CartVo> add(HttpSession session, Integer count, Integer productId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if (user == null){

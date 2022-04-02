@@ -32,7 +32,7 @@ public class ShippingController {
      * @param shipping
      * @return
      */
-    @RequestMapping(value = "add.do",method = RequestMethod.POST)
+    @RequestMapping(value = "add.do",method = RequestMethod.GET)
     public ServerResponse add(HttpSession session, Shipping shipping){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
