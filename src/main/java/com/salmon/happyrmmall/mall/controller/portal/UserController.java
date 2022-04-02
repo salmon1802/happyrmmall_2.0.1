@@ -97,7 +97,7 @@ public class UserController {
      * @param session
      * @return
      */
-    @RequestMapping(value = "get_user_info.do",method = RequestMethod.GET)
+    @RequestMapping(value = "get_user_info.do",method = RequestMethod.POST)
     public ServerResponse<User> getUserInfo(HttpSession session){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if(user != null){
@@ -186,7 +186,7 @@ public class UserController {
      * @param session
      * @return
      */
-    @RequestMapping(value = "get_information.do",method = RequestMethod.GET)
+    @RequestMapping(value = "get_information.do",method = RequestMethod.POST)
     public ServerResponse<User> get_information(HttpSession session){
         User currentUser = (User)session.getAttribute(Const.CURRENT_USER);
         if(currentUser == null){
