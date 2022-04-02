@@ -64,7 +64,7 @@ public class ShippingController {
      * @param shipping
      * @return
      */
-    @RequestMapping(value = "update.do",method = RequestMethod.PUT)
+    @RequestMapping(value = "update.do",method = RequestMethod.POST)
     public ServerResponse update(HttpSession session, Shipping shipping){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -79,7 +79,7 @@ public class ShippingController {
      * @param shippingId
      * @return
      */
-    @RequestMapping(value = "select.do",method = RequestMethod.POST)
+    @RequestMapping(value = "select.do",method = RequestMethod.GET)
     public ServerResponse<Shipping> select(HttpSession session, Integer shippingId){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -96,7 +96,7 @@ public class ShippingController {
      * @param session
      * @return
      */
-    @RequestMapping(value = "list.do",method = RequestMethod.POST)
+    @RequestMapping(value = "list.do",method = RequestMethod.GET)
     public ServerResponse<PageInfo> list(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                                          @RequestParam(value = "pageSize",defaultValue = "10") int pageSize,
                                          HttpSession session){

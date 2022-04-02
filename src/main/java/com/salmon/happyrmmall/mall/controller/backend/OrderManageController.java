@@ -39,7 +39,7 @@ public class OrderManageController {
      * @param pageSize
      * @return
      */
-    @RequestMapping(value = "list.do",method = RequestMethod.POST)
+    @RequestMapping(value = "list.do",method = RequestMethod.GET)
     public ServerResponse<PageInfo> orderList(HttpSession session, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                                               @RequestParam(value = "pageSize",defaultValue = "10")int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
@@ -55,7 +55,7 @@ public class OrderManageController {
     }
 
 
-    @RequestMapping(value = "detail.do",method = RequestMethod.POST)
+    @RequestMapping(value = "detail.do",method = RequestMethod.GET)
     public ServerResponse<OrderVo> orderDetail(HttpSession session, Long orderNo){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -70,7 +70,7 @@ public class OrderManageController {
     }
 
 
-    @RequestMapping(value = "search.do",method = RequestMethod.POST)
+    @RequestMapping(value = "search.do",method = RequestMethod.GET)
     public ServerResponse<PageInfo> orderSearch(HttpSession session, Long orderNo,@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                                                 @RequestParam(value = "pageSize",defaultValue = "10")int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);

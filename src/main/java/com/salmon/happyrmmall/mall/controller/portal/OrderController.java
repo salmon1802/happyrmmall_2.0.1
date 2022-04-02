@@ -92,7 +92,7 @@ public class OrderController {
      * @param orderNo
      * @return
      */
-    @RequestMapping(value = "detail.do",method = RequestMethod.POST)
+    @RequestMapping(value = "detail.do",method = RequestMethod.GET)
     public ServerResponse detail(HttpSession session,Long orderNo){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -109,7 +109,7 @@ public class OrderController {
      * @param pageSize
      * @return
      */
-    @RequestMapping(value = "list.do",method = RequestMethod.POST)
+    @RequestMapping(value = "list.do",method = RequestMethod.GET)
     @ApiOperation("分页显示当前用户所有订单信息，用于我的订单页面")
     public ServerResponse list(HttpSession session,
                                @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
@@ -152,7 +152,7 @@ public class OrderController {
      * @param request
      * @return
      */
-    @RequestMapping(value = "alipay_callback.do",method = RequestMethod.GET)
+    @RequestMapping(value = "alipay_callback.do")
     public Object alipayCallback(HttpServletRequest request){
         logger.info("开始进行支付宝回调");
 
@@ -202,7 +202,7 @@ public class OrderController {
      * @param orderNo
      * @return
      */
-    @RequestMapping(value = "query_order_pay_status.do",method = RequestMethod.POST)
+    @RequestMapping(value = "query_order_pay_status.do",method = RequestMethod.GET)
     public ServerResponse<Boolean> queryOrderPayStatus(HttpSession session, Long orderNo){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {

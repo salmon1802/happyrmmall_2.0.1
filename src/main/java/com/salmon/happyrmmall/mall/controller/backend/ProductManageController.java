@@ -69,7 +69,7 @@ public class ProductManageController {
      * @param status
      * @return
      */
-    @RequestMapping(value = "set_sale_status.do",method = RequestMethod.PUT)
+    @RequestMapping(value = "set_sale_status.do",method = RequestMethod.POST)
     public ServerResponse setSaleStatus(HttpSession session, Integer productId, Integer status){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -90,7 +90,7 @@ public class ProductManageController {
      * @param productId
      * @return
      */
-    @RequestMapping(value = "detail.do",method = RequestMethod.POST)
+    @RequestMapping(value = "detail.do",method = RequestMethod.GET)
     public ServerResponse getDetail(HttpSession session, Integer productId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -112,7 +112,7 @@ public class ProductManageController {
      * @param pageSize
      * @return
      */
-    @RequestMapping(value = "list.do",method = RequestMethod.POST)
+    @RequestMapping(value = "list.do",method = RequestMethod.GET)
     public ServerResponse getList(HttpSession session, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -136,7 +136,7 @@ public class ProductManageController {
      * @param pageSize
      * @return
      */
-    @RequestMapping(value = "search.do",method = RequestMethod.POST)
+    @RequestMapping(value = "search.do",method = RequestMethod.GET)
     public ServerResponse productSearch(HttpSession session, String productName,Integer productId,@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){

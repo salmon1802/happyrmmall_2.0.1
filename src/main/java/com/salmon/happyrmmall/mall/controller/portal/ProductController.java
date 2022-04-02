@@ -25,7 +25,7 @@ public class ProductController {
     private IProductService iProductService;
 
 
-    @RequestMapping(value = "detail.do",method = RequestMethod.POST)
+    @RequestMapping(value = "detail.do",method = RequestMethod.GET)
     public ServerResponse<ProductDetailVo> detail(Integer productId){
         return iProductService.getProductDetail(productId);
     }
@@ -40,7 +40,7 @@ public class ProductController {
      * @return
      */
     @ApiOperation("分页keyword模糊查询")
-    @RequestMapping(value = "list.do",method = RequestMethod.POST)
+    @RequestMapping(value = "list.do",method = RequestMethod.GET)
     public ServerResponse<PageInfo> list(@RequestParam(value = "keyword", required = false) String keyword,
                                          @RequestParam(value = "categoryId", required = false) Integer categoryId,
                                          @RequestParam(value = "pageNum", defaultValue = "1") int pageNum,

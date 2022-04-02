@@ -60,7 +60,7 @@ public class CategoryManageController {
      * @return
      */
 
-    @RequestMapping(value = "set_category_name.do",method = RequestMethod.PUT)
+    @RequestMapping(value = "set_category_name.do",method = RequestMethod.POST)
     public ServerResponse setCategoryName(HttpSession session,Integer categoryId,String categoryName){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -81,7 +81,7 @@ public class CategoryManageController {
      * @param categoryId
      * @return
      */
-    @RequestMapping(value = "get_category.do",method = RequestMethod.POST)
+    @RequestMapping(value = "get_category.do",method = RequestMethod.GET)
     public ServerResponse getChildrenParallelCategory(HttpSession session,@RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -103,7 +103,7 @@ public class CategoryManageController {
      * @param categoryId
      * @return
      */
-    @RequestMapping(value = "get_deep_category.do",method = RequestMethod.POST)
+    @RequestMapping(value = "get_deep_category.do",method = RequestMethod.GET)
     public ServerResponse getCategoryAndDeepChildrenCategory(HttpSession session,@RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){

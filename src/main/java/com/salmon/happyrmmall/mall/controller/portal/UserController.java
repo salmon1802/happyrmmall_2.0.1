@@ -40,10 +40,6 @@ public class UserController {
      */
     @RequestMapping(value = "login.do",method = RequestMethod.POST)
     @ApiOperation("用户登录")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "username",value = "用户名",required = true,paramType = "query",dataType = "String"),
-            @ApiImplicitParam(name = "password",value = "密码",required = true,paramType = "query",dataType = "String"),
-    })
     public ServerResponse<User> login(String username, String password, HttpSession session){
         ServerResponse<User> response = iUserService.login(username, password);
         if(response.isSuccess()){
@@ -164,7 +160,7 @@ public class UserController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "update_information.do",method = RequestMethod.PUT)
+    @RequestMapping(value = "update_information.do",method = RequestMethod.POST)
     public ServerResponse<User> update_information(HttpSession session,User user){
         User currentUser = (User) session.getAttribute(Const.CURRENT_USER);
         if(currentUser == null){
