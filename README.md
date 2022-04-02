@@ -15,3 +15,10 @@
   10.QQ邮箱注册验证以及注册页面优化，现在的又臭又长  
   11.对接微信支付模块  
   12.自动化部署？  
+
+
+
+
+主页面:    www.happyrmmall.cn  
+管理页面:  admin.happyrmmall.cn  
+文档页面:  document.happyrmmall.cn/swagger-ui/index.html
