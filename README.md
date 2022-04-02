@@ -3,7 +3,7 @@
 2022年1月11日提交了可运行的springboot版本，其实就是体验了下springboot和SSM的不同
 
 目前的计划有：  
-  1.整合swagger  
+  1.~~整合swagger3~~  
   2.整合Elasticsearch  
   3.用docker部署到服务器  
   4.帮助前端完成管理系统的联调和开发  
@@ -15,3 +15,8 @@
   10.QQ邮箱注册验证以及注册页面优化，现在的又臭又长  
   11.对接微信支付模块  
   12.自动化部署？  
+
+
+# [主页面](http://www.happyrmmall.cn/)   
+# [管理页面](http://admin.happyrmmall.cn)  
+# [文档页面](http://document.happyrmmall.cn/swagger-ui/index.html)  
