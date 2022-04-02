@@ -21,6 +21,3 @@
 [主页面](www.happyrmmall.cn)   
 [管理页面](admin.happyrmmall.cn)  
 [文档页面](document.happyrmmall.cn/swagger-ui/index.html)  
-主页面:    www.happyrmmall.cn  
-管理页面:  admin.happyrmmall.cn  
-文档页面:  document.happyrmmall.cn/swagger-ui/index.html
