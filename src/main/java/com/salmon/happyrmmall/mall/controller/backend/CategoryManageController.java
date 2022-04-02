@@ -60,7 +60,7 @@ public class CategoryManageController {
      * @return
      */
 
-    @RequestMapping(value = "set_category_name.do",method = RequestMethod.POST)
+    @RequestMapping(value = "set_category_name.do",method = RequestMethod.GET)
     public ServerResponse setCategoryName(HttpSession session,Integer categoryId,String categoryName){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){

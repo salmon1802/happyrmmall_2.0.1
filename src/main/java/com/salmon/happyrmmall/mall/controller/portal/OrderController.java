@@ -60,7 +60,7 @@ public class OrderController {
      * @param orderNo
      * @return
      */
-    @RequestMapping(value = "cancel.do",method = RequestMethod.POST)
+    @RequestMapping(value = "cancel.do",method = RequestMethod.GET)
     public ServerResponse cancel(HttpSession session, Long orderNo){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
