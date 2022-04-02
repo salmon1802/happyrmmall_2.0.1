@@ -17,7 +17,6 @@
   12.自动化部署？  
 
 
-[我的博客](http://blog.csdn.net/guodongxiaren "悬停显示")
-[主页面](http://www.happyrmmall.cn/)   
-[管理页面](admin.happyrmmall.cn)  
-[文档页面](document.happyrmmall.cn/swagger-ui/index.html)  
+[#主页面](http://www.happyrmmall.cn/)   
+[#管理页面](http://admin.happyrmmall.cn)  
+[#文档页面](http://document.happyrmmall.cn/swagger-ui/index.html)  
