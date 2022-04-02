@@ -13,10 +13,9 @@ import com.salmon.happyrmmall.mall.util.PropertiesUtil;
 import io.swagger.annotations.Api;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -49,7 +48,7 @@ public class ProductManageController {
      * @param product
      * @return
      */
-    @RequestMapping("save.do")
+    @RequestMapping(value = "save.do",method = RequestMethod.POST)
     public ServerResponse productSave(HttpSession session, Product product){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -66,10 +65,11 @@ public class ProductManageController {
     /**
      * 设置商品状态
      * @param session
-     * @param product
+     * @param productId
+     * @param status
      * @return
      */
-    @RequestMapping("set_sale_status.do")
+    @RequestMapping(value = "set_sale_status.do",method = RequestMethod.PUT)
     public ServerResponse setSaleStatus(HttpSession session, Integer productId, Integer status){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -90,7 +90,7 @@ public class ProductManageController {
      * @param productId
      * @return
      */
-    @RequestMapping("detail.do")
+    @RequestMapping(value = "detail.do",method = RequestMethod.POST)
     public ServerResponse getDetail(HttpSession session, Integer productId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -112,7 +112,7 @@ public class ProductManageController {
      * @param pageSize
      * @return
      */
-    @RequestMapping("list.do")
+    @RequestMapping(value = "list.do",method = RequestMethod.POST)
     public ServerResponse getList(HttpSession session, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -136,7 +136,7 @@ public class ProductManageController {
      * @param pageSize
      * @return
      */
-    @RequestMapping("search.do")
+    @RequestMapping(value = "search.do",method = RequestMethod.POST)
     public ServerResponse productSearch(HttpSession session, String productName,Integer productId,@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -156,7 +156,7 @@ public class ProductManageController {
      * @param request
      * @return
      */
-    @RequestMapping("upload.do")
+    @RequestMapping(value = "upload.do",method = RequestMethod.POST)
     public ServerResponse upload(HttpSession session,@RequestParam(value = "upload_file",required = false) MultipartFile file, HttpServletRequest request){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -164,6 +164,7 @@ public class ProductManageController {
         }
         if(iUserService.checkAdminRole(user).isSuccess()) {
             String path = request.getSession().getServletContext().getRealPath("upload");
+//            String path = session.getServletContext().getRealPath("upload");
             String targetFileName = iFileService.upload(file, path);
             String url = PropertiesUtil.getProperty("ftp.server.http.prefix") + targetFileName;
 
@@ -184,7 +185,7 @@ public class ProductManageController {
      * @param response
      * @return
      */
-    @RequestMapping("richtext_img_upload.do")
+    @RequestMapping(value = "richtext_img_upload.do",method = RequestMethod.POST)
     public Map richtextImgUpload(HttpSession session, @RequestParam(value = "upload_file",required = false) MultipartFile file, HttpServletRequest request, HttpServletResponse response){
         Map resultMap = Maps.newHashMap();
         User user = (User)session.getAttribute(Const.CURRENT_USER);

@@ -15,11 +15,17 @@ mybatis:
     - classpath*:com/**/mapper/*Mapper.xml
 
 
-springfox:
-  documentation:
-    swagger:
-      v2:
-         host: 118.31.249.87:8080
+servlet:
+  multipart:
+    # 单个文件大小
+    max-file-size:  10MB
+    # 设置总上传的文件大小
+    max-request-size:  20MB
+
+
+
+
+
 
 
 #druid和redis只是引入还没配置，本项目先搭起来再说

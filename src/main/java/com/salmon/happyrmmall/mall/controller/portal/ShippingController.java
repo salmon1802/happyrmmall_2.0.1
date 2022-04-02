@@ -10,10 +10,7 @@ import com.salmon.happyrmmall.mall.service.IShippingService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -35,7 +32,7 @@ public class ShippingController {
      * @param shipping
      * @return
      */
-    @RequestMapping("add.do")
+    @RequestMapping(value = "add.do",method = RequestMethod.POST)
     public ServerResponse add(HttpSession session, Shipping shipping){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -51,8 +48,8 @@ public class ShippingController {
      * @param shippingId
      * @return
      */
-    @RequestMapping("del.do")
-    public ServerResponse del(HttpSession session, Integer shippingId){  //springmvc的对象绑定
+    @RequestMapping(value = "del.do",method = RequestMethod.POST)
+    public ServerResponse del(HttpSession session, Integer shippingId){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), ResponseCode.NEED_LOGIN.getDesc());
@@ -64,10 +61,10 @@ public class ShippingController {
     /**
      * 更新收货地址
      * @param session
-     * @param shippingId
+     * @param shipping
      * @return
      */
-    @RequestMapping("update.do")
+    @RequestMapping(value = "update.do",method = RequestMethod.PUT)
     public ServerResponse update(HttpSession session, Shipping shipping){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -82,7 +79,7 @@ public class ShippingController {
      * @param shippingId
      * @return
      */
-    @RequestMapping("select.do")
+    @RequestMapping(value = "select.do",method = RequestMethod.POST)
     public ServerResponse<Shipping> select(HttpSession session, Integer shippingId){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -93,13 +90,13 @@ public class ShippingController {
     }
 
     /**
-     * 分页列表查询
+     * 分页列表查询所有当前用户收货地址
      * @param pageNum
      * @param pageSize
      * @param session
      * @return
      */
-    @RequestMapping("list.do")
+    @RequestMapping(value = "list.do",method = RequestMethod.POST)
     public ServerResponse<PageInfo> list(@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                                          @RequestParam(value = "pageSize",defaultValue = "10") int pageSize,
                                          HttpSession session){

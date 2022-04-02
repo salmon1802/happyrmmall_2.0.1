@@ -1,5 +1,7 @@
 package com.salmon.happyrmmall.mall.common;
 
+
+
 /**
  * @date 2020-12-1 - 13:30
  * Created by Salmon

@@ -5,18 +5,18 @@ import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.service.IProductService;
 import com.salmon.happyrmmall.mall.vo.ProductDetailVo;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @date 2020-12-3 - 20:12
  * Created by Salmon
  */
-@Api(tags = "ProductController", description = "产品详情与模糊查询")
+@Api(tags = "ProductController", description = "普通用户查看商品")
 @RestController
 @RequestMapping("/product/")
 public class ProductController {
@@ -25,7 +25,7 @@ public class ProductController {
     private IProductService iProductService;
 
 
-    @RequestMapping("detail.do")
+    @RequestMapping(value = "detail.do",method = RequestMethod.POST)
     public ServerResponse<ProductDetailVo> detail(Integer productId){
         return iProductService.getProductDetail(productId);
     }
@@ -39,7 +39,8 @@ public class ProductController {
      * @param orderBy
      * @return
      */
-    @RequestMapping("list.do")
+    @ApiOperation("分页keyword模糊查询")
+    @RequestMapping(value = "list.do",method = RequestMethod.POST)
     public ServerResponse<PageInfo> list(@RequestParam(value = "keyword", required = false) String keyword,
                                          @RequestParam(value = "categoryId", required = false) Integer categoryId,
                                          @RequestParam(value = "pageNum", defaultValue = "1") int pageNum,

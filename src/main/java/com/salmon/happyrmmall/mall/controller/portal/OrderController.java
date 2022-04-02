@@ -10,14 +10,12 @@ import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.pojo.User;
 import com.salmon.happyrmmall.mall.service.IOrderService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -46,7 +44,7 @@ public class OrderController {
      * @param shippingId
      * @return
      */
-    @RequestMapping("create.do")
+    @RequestMapping(value = "create.do",method = RequestMethod.POST)
     public ServerResponse create(HttpSession session, Integer shippingId){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -62,7 +60,7 @@ public class OrderController {
      * @param orderNo
      * @return
      */
-    @RequestMapping("cancel.do")
+    @RequestMapping(value = "cancel.do",method = RequestMethod.POST)
     public ServerResponse cancel(HttpSession session, Long orderNo){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -78,7 +76,7 @@ public class OrderController {
      * @param session
      * @return
      */
-    @RequestMapping("get_order_cart_product.do")
+    @RequestMapping(value = "get_order_cart_product.do",method = RequestMethod.GET)
     public ServerResponse getOrderCartProduct(HttpSession session){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -89,12 +87,12 @@ public class OrderController {
     }
 
     /**
-     * 获取订单详情
+     * 获取某一个订单详情
      * @param session
      * @param orderNo
      * @return
      */
-    @RequestMapping("detail.do")
+    @RequestMapping(value = "detail.do",method = RequestMethod.POST)
     public ServerResponse detail(HttpSession session,Long orderNo){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -105,14 +103,17 @@ public class OrderController {
     }
 
     /**
-     * 分页显示列表信息
+     * 分页显示当前用户所有订单信息，用于我的订单页面
      * @param session
      * @param pageNum
      * @param pageSize
      * @return
      */
-    @RequestMapping("list.do")
-    public ServerResponse list(HttpSession session, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,@RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
+    @RequestMapping(value = "list.do",method = RequestMethod.POST)
+    @ApiOperation("分页显示当前用户所有订单信息，用于我的订单页面")
+    public ServerResponse list(HttpSession session,
+                               @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
+                               @RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), ResponseCode.NEED_LOGIN.getDesc());
@@ -135,7 +136,7 @@ public class OrderController {
      * @param request
      * @return
      */
-    @RequestMapping("pay.do")
+    @RequestMapping(value = "pay.do",method = RequestMethod.POST)
     public ServerResponse pay(HttpSession session, Long orderNo, HttpServletRequest request){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -151,7 +152,7 @@ public class OrderController {
      * @param request
      * @return
      */
-    @RequestMapping("alipay_callback.do")
+    @RequestMapping(value = "alipay_callback.do",method = RequestMethod.GET)
     public Object alipayCallback(HttpServletRequest request){
         logger.info("开始进行支付宝回调");
 
@@ -201,7 +202,7 @@ public class OrderController {
      * @param orderNo
      * @return
      */
-    @RequestMapping("query_order_pay_status.do")
+    @RequestMapping(value = "query_order_pay_status.do",method = RequestMethod.POST)
     public ServerResponse<Boolean> queryOrderPayStatus(HttpSession session, Long orderNo){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {

@@ -9,10 +9,7 @@ import com.salmon.happyrmmall.mall.service.IUserService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -39,7 +36,7 @@ public class CategoryManageController {
      * @param parentId
      * @return
      */
-    @RequestMapping("add_category.do")
+    @RequestMapping(value = "add_category.do",method = RequestMethod.POST)
     public ServerResponse addCategory(HttpSession session,String categoryName,@RequestParam(value = "parentId",defaultValue = "0") int parentId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -63,7 +60,7 @@ public class CategoryManageController {
      * @return
      */
 
-    @RequestMapping("set_category_name.do")
+    @RequestMapping(value = "set_category_name.do",method = RequestMethod.PUT)
     public ServerResponse setCategoryName(HttpSession session,Integer categoryId,String categoryName){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -84,7 +81,7 @@ public class CategoryManageController {
      * @param categoryId
      * @return
      */
-    @RequestMapping("get_category.do")
+    @RequestMapping(value = "get_category.do",method = RequestMethod.POST)
     public ServerResponse getChildrenParallelCategory(HttpSession session,@RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -106,7 +103,7 @@ public class CategoryManageController {
      * @param categoryId
      * @return
      */
-    @RequestMapping("get_deep_category.do")
+    @RequestMapping(value = "get_deep_category.do",method = RequestMethod.POST)
     public ServerResponse getCategoryAndDeepChildrenCategory(HttpSession session,@RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){

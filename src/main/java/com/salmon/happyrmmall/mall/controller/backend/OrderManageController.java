@@ -9,12 +9,10 @@ import com.salmon.happyrmmall.mall.service.IOrderService;
 import com.salmon.happyrmmall.mall.service.IUserService;
 import com.salmon.happyrmmall.mall.vo.OrderVo;
 import io.swagger.annotations.Api;
+import javafx.geometry.Pos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -41,7 +39,7 @@ public class OrderManageController {
      * @param pageSize
      * @return
      */
-    @RequestMapping("list.do")
+    @RequestMapping(value = "list.do",method = RequestMethod.POST)
     public ServerResponse<PageInfo> orderList(HttpSession session, @RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                                               @RequestParam(value = "pageSize",defaultValue = "10")int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
@@ -57,7 +55,7 @@ public class OrderManageController {
     }
 
 
-    @RequestMapping("detail.do")
+    @RequestMapping(value = "detail.do",method = RequestMethod.POST)
     public ServerResponse<OrderVo> orderDetail(HttpSession session, Long orderNo){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -72,7 +70,7 @@ public class OrderManageController {
     }
 
 
-    @RequestMapping("search.do")
+    @RequestMapping(value = "search.do",method = RequestMethod.POST)
     public ServerResponse<PageInfo> orderSearch(HttpSession session, Long orderNo,@RequestParam(value = "pageNum",defaultValue = "1") int pageNum,
                                                 @RequestParam(value = "pageSize",defaultValue = "10")int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
@@ -88,7 +86,7 @@ public class OrderManageController {
         }
     }
 
-    @RequestMapping("send_goods.do")
+    @RequestMapping(value = "send_goods.do",method = RequestMethod.POST)
     public ServerResponse<String> orderSendGoods(HttpSession session, Long orderNo){
 
         User user = (User)session.getAttribute(Const.CURRENT_USER);
