@@ -156,7 +156,7 @@ public class ProductManageController {
      * @param request
      * @return
      */
-    @RequestMapping(value = "upload.do")
+    @RequestMapping(value = "upload.do",method = RequestMethod.POST)
     public ServerResponse upload(HttpSession session,@RequestParam(value = "upload_file",required = false) MultipartFile file, HttpServletRequest request){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -185,7 +185,7 @@ public class ProductManageController {
      * @param response
      * @return
      */
-    @RequestMapping(value = "richtext_img_upload.do")
+    @RequestMapping(value = "richtext_img_upload.do",method = RequestMethod.POST)
     public Map richtextImgUpload(HttpSession session, @RequestParam(value = "upload_file",required = false) MultipartFile file, HttpServletRequest request, HttpServletResponse response){
         Map resultMap = Maps.newHashMap();
         User user = (User)session.getAttribute(Const.CURRENT_USER);
