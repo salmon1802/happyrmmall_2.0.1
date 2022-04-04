@@ -6,7 +6,7 @@
   1.~~整合swagger3~~  
   2.整合Elasticsearch  
   3.用docker部署到服务器  
-  4.帮助前端完成管理系统的联调和开发  
+  4.~~与前端完成管理系统的联调和开发~~  
   5.整合SpringSecurity和JWT  
   6.使用Redis代替guava本地缓存  
   7.整合OSS实现文件上传（阿里云对象存储服务（Object Storage Service，简称 OSS））  
