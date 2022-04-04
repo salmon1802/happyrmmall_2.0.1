@@ -43,7 +43,7 @@ public class CategoryManageController {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),"用户未登录，请登录");
         }
 
-        //校验是否是管理员
+        //校验是否是管理员,如果是才可以进行之后的操作
         if(iUserService.checkAdminRole(user).isSuccess()){
             return iCategoryService.addCategory(categoryName, parentId);
         }else{
