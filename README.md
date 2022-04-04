@@ -14,9 +14,10 @@
   9.评论区（已放弃）  
   10.QQ邮箱注册验证以及注册页面优化，现在的又臭又长  
   11.对接微信支付模块  
-  12.自动化部署？  
+  12.~~使用druid代替c3p0~~
 
 
 # [主页面](http://www.happyrmmall.cn/)   
 # [管理页面](http://admin.happyrmmall.cn)  
 # [文档页面](http://document.happyrmmall.cn/swagger-ui/index.html)  
+# [druid监控页面](http://druid.happyrmmall.cn/) 
