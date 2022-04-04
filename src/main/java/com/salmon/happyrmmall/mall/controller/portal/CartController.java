@@ -49,7 +49,7 @@ public class CartController {
      * @param productId
      * @return
      */
-    @RequestMapping(value = "add.do",method = RequestMethod.GET)
+    @RequestMapping(value = "add.do",method = RequestMethod.POST)
     public ServerResponse<CartVo> add(HttpSession session, Integer count, Integer productId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if (user == null){
@@ -65,7 +65,7 @@ public class CartController {
      * @param productId
      * @return
      */
-    @RequestMapping(value = "update.do",method = RequestMethod.POST)
+    @RequestMapping(value = "update.do",method = RequestMethod.PUT)
     public ServerResponse<CartVo> update(HttpSession session, Integer count, Integer productId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if (user == null){
@@ -80,7 +80,7 @@ public class CartController {
      * @param productIds
      * @return
      */
-    @RequestMapping(value = "delete_product.do",method = RequestMethod.POST)
+    @RequestMapping(value = "delete_product.do",method = RequestMethod.DELETE)
     public ServerResponse<CartVo> deleteProduct(HttpSession session, String productIds){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if (user == null){
@@ -94,7 +94,7 @@ public class CartController {
      * @param session
      * @return
      */
-    @RequestMapping(value = "select_all.do",method = RequestMethod.GET)
+    @RequestMapping(value = "select_all.do",method = RequestMethod.POST)
     public ServerResponse<CartVo> selectAll(HttpSession session) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -108,7 +108,7 @@ public class CartController {
      * @param session
      * @return
      */
-    @RequestMapping(value = "un_select_all.do",method = RequestMethod.GET)
+    @RequestMapping(value = "un_select_all.do",method = RequestMethod.POST)
     public ServerResponse<CartVo> unSelectAll(HttpSession session) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -123,7 +123,7 @@ public class CartController {
      * @param productId
      * @return
      */
-    @RequestMapping(value = "select.do",method = RequestMethod.GET)
+    @RequestMapping(value = "select.do",method = RequestMethod.POST)
     public ServerResponse<CartVo> select(HttpSession session, Integer productId) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -138,7 +138,7 @@ public class CartController {
      * @param productId
      * @return
      */
-    @RequestMapping(value = "un_select.do",method = RequestMethod.GET)
+    @RequestMapping(value = "un_select.do",method = RequestMethod.POST)
     public ServerResponse<CartVo> unSelect(HttpSession session, Integer productId) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {

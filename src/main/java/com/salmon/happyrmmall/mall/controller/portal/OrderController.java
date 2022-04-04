@@ -44,7 +44,7 @@ public class OrderController {
      * @param shippingId
      * @return
      */
-    @RequestMapping(value = "create.do",method = RequestMethod.GET)
+    @RequestMapping(value = "create.do",method = RequestMethod.POST)
     public ServerResponse create(HttpSession session, Integer shippingId){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -60,7 +60,7 @@ public class OrderController {
      * @param orderNo
      * @return
      */
-    @RequestMapping(value = "cancel.do",method = RequestMethod.GET)
+    @RequestMapping(value = "cancel.do",method = RequestMethod.DELETE)
     public ServerResponse cancel(HttpSession session, Long orderNo){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -136,7 +136,7 @@ public class OrderController {
      * @param request
      * @return
      */
-    @RequestMapping(value = "pay.do")
+    @RequestMapping(value = "pay.do",method = RequestMethod.POST)
     public ServerResponse pay(HttpSession session, Long orderNo, HttpServletRequest request){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {

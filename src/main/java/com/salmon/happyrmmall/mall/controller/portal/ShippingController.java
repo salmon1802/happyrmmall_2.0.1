@@ -32,7 +32,7 @@ public class ShippingController {
      * @param shipping
      * @return
      */
-    @RequestMapping(value = "add.do",method = RequestMethod.GET)
+    @RequestMapping(value = "add.do",method = RequestMethod.POST)
     public ServerResponse add(HttpSession session, Shipping shipping){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -48,7 +48,7 @@ public class ShippingController {
      * @param shippingId
      * @return
      */
-    @RequestMapping(value = "del.do",method = RequestMethod.POST)
+    @RequestMapping(value = "del.do",method = RequestMethod.DELETE)
     public ServerResponse del(HttpSession session, Integer shippingId){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
@@ -64,7 +64,7 @@ public class ShippingController {
      * @param shipping
      * @return
      */
-    @RequestMapping(value = "update.do",method = RequestMethod.POST)
+    @RequestMapping(value = "update.do",method = RequestMethod.PUT)
     public ServerResponse update(HttpSession session, Shipping shipping){  //springmvc的对象绑定
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null) {
