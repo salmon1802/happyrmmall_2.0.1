@@ -86,7 +86,7 @@ public class OrderManageController {
         }
     }
 
-    @RequestMapping(value = "send_goods.do",method = RequestMethod.GET)
+    @RequestMapping(value = "send_goods.do",method = RequestMethod.POST)
     public ServerResponse<String> orderSendGoods(HttpSession session, Long orderNo){
 
         User user = (User)session.getAttribute(Const.CURRENT_USER);

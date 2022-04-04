@@ -48,7 +48,7 @@ public class ProductManageController {
      * @param product
      * @return
      */
-    @RequestMapping(value = "save.do",method = RequestMethod.GET)
+    @RequestMapping(value = "save.do",method = RequestMethod.POST)
     public ServerResponse productSave(HttpSession session, Product product){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -69,7 +69,7 @@ public class ProductManageController {
      * @param status
      * @return
      */
-    @RequestMapping(value = "set_sale_status.do",method = RequestMethod.GET)
+    @RequestMapping(value = "set_sale_status.do",method = RequestMethod.PUT)
     public ServerResponse setSaleStatus(HttpSession session, Integer productId, Integer status){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){

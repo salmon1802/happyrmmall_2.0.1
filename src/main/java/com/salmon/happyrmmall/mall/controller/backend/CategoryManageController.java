@@ -36,7 +36,7 @@ public class CategoryManageController {
      * @param parentId
      * @return
      */
-    @RequestMapping(value = "add_category.do",method = RequestMethod.GET)
+    @RequestMapping(value = "add_category.do",method = RequestMethod.POST)
     public ServerResponse addCategory(HttpSession session,String categoryName,@RequestParam(value = "parentId",defaultValue = "0") int parentId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
@@ -60,7 +60,7 @@ public class CategoryManageController {
      * @return
      */
 
-    @RequestMapping(value = "set_category_name.do",method = RequestMethod.GET)
+    @RequestMapping(value = "set_category_name.do",method = RequestMethod.PUT)
     public ServerResponse setCategoryName(HttpSession session,Integer categoryId,String categoryName){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){
