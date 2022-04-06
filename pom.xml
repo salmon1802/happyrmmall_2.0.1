@@ -30,16 +30,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-web</artifactId>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>com.fasterxml.jackson.core</groupId>-->
-<!--                    <artifactId>jackson-databind</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
 
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -290,9 +280,39 @@
                     </excludes>
                 </configuration>
             </plugin>
-
-
         </plugins>
+
+
+        <resources>
+            <resource>
+                <directory>src/main/resources.${deployType}</directory>
+                <excludes>
+                    <exclude>*.jsp</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+
     </build>
+    <profiles>
+        <profile>
+        <id>develop</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <deployType>develop</deployType>
+        </properties>
+    </profile>
+
+        <profile>
+            <id>product</id>
+            <properties>
+                <deployType>product</deployType>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
