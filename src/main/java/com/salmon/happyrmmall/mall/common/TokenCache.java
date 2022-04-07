@@ -8,9 +8,12 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 该类guava缓存已经被redis代替
  * @date 2020-12-1 - 19:56
  * Created by Salmon
  */
+
+@Deprecated
 public class TokenCache {
     private static Logger logger = LoggerFactory.getLogger(TokenCache.class);
 

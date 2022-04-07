@@ -5,6 +5,7 @@ import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.common.TokenCache;
 import com.salmon.happyrmmall.mall.dao.UserMapper;
 import com.salmon.happyrmmall.mall.pojo.User;
+import com.salmon.happyrmmall.mall.service.IRedisService;
 import com.salmon.happyrmmall.mall.service.IUserService;
 import com.salmon.happyrmmall.mall.util.MD5Util;
 import org.apache.commons.lang3.StringUtils;
@@ -23,7 +24,8 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
 
-
+    @Autowired
+    private IRedisService redisService;
     /**
      * 登录操作
      * @param username
@@ -133,7 +135,9 @@ public class UserServiceImpl implements IUserService {
         if(resultCount > 0){
             //说明问题及问题答案是此用户且是正确的
             String forgetToken = UUID.randomUUID().toString();
-            TokenCache.setKey(TokenCache.TOKEN_PREFIX+username, forgetToken);
+//            TokenCache.setKey(TokenCache.TOKEN_PREFIX+username, forgetToken);
+            redisService.set(Const.TOKEN_PREFIX + username, forgetToken);
+            redisService.expire(Const.TOKEN_PREFIX + username, 12*60*60);
             return ServerResponse.createBySuccess(forgetToken);
         }
         return ServerResponse.createByErrorMessage("问题的答案错误");
@@ -157,7 +161,8 @@ public class UserServiceImpl implements IUserService {
             return ServerResponse.createByErrorMessage("用户不存在");
         }
 
-        String token = TokenCache.getKey(TokenCache.TOKEN_PREFIX+username);
+//        String token = TokenCache.getKey(TokenCache.TOKEN_PREFIX+username);
+        String token = redisService.get(Const.TOKEN_PREFIX + username);
         if(StringUtils.isBlank(token)){
             return ServerResponse.createByErrorMessage("token无效或者过期");
         }

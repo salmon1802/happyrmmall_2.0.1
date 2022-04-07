@@ -211,13 +211,6 @@
             <version>2.6</version>
             <scope>runtime</scope>
         </dependency>
-             
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.alipay.sdk/alipay-sdk-java &ndash;&gt;-->
-<!--        <dependency>-->
-<!--           <groupId>com.alipay.sdk</groupId>-->
-<!--           <artifactId>alipay-sdk-java</artifactId>-->
-<!--           <version>4.22.30.ALL</version>-->
-<!--        </dependency>-->
 
 
         <!--按如下方式引入每一个第三方的jar包，其中${project.basedir}指当前项目的根目录-->
@@ -244,11 +237,12 @@
         </dependency>
 
 
+        <!--redis依赖配置-->
         <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-            <version>2.9.0</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+
 
         <!--Swagger-UI API文档生产工具-->
         <dependency>
@@ -283,6 +277,7 @@
         </plugins>
 
 
+        <!--环境隔离-->
         <resources>
             <resource>
                 <directory>src/main/resources.${deployType}</directory>
