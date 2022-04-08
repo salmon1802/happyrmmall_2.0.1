@@ -118,7 +118,7 @@ public class UserServiceImpl implements IUserService {
         }
         String question = userMapper.selectQuestionByUsername(username);
         if(StringUtils.isNotBlank(question)){
-            return ServerResponse.createBySuccessMessage(question);
+            return ServerResponse.createBySuccess(question);
         }
         return ServerResponse.createByErrorMessage("找回密码的问题是空的");
     }

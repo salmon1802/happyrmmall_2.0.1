@@ -11,14 +11,17 @@
   6.~~使用Redis代替guava本地缓存~~  
   7.整合OSS实现文件上传（阿里云对象存储服务（Object Storage Service，简称 OSS））  
   8.实现真正的物流对接？  
-  9.评论区（已放弃）  
+  9.评论区(现在要实名认证,G!)  
   10.QQ邮箱注册验证以及注册页面优化，现在的又臭又长  
-  11.对接微信支付模块  
+  11.对接微信支付模块(要注册公司,G!)  
   12.~~使用druid代替c3p0~~  
-  13.~~完成环境隔离~~
+  13.~~完成Maven环境隔离~~
+  14.~~完成了spring session的整合工作，解决了集群部署session不共享的问题，实现单点登录~~
 
 
 # [主页面](http://www.happyrmmall.cn/)   
 # [管理页面](http://admin.happyrmmall.cn)  
 # [文档页面](http://document.happyrmmall.cn/swagger-ui/index.html)  
 # [druid监控页面](http://druid.happyrmmall.cn/) 
+
+本项目需要Java-1.8 VsFTP redis-3.0.5 nginx-1.10.2 MySQL-8.0.28 Maven与Git随意
