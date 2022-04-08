@@ -57,8 +57,13 @@ public class UserController {
     @ApiOperation("用户登出")
     @RequestMapping(value = "logout.do",method = RequestMethod.POST)
     public ServerResponse<String> logout(HttpSession session) {
-        session.removeAttribute(Const.CURRENT_USER);
-        return ServerResponse.createBySuccess();
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if ( user != null ) {
+            session.removeAttribute(Const.CURRENT_USER);
+            return ServerResponse.createBySuccessMessage("注销成功");
+        } else {
+            return ServerResponse.createByErrorMessage("当前用户未登录，请登录后注销");
+        }
     }
 
     /**

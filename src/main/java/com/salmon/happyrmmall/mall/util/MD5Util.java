@@ -1,8 +1,5 @@
 package com.salmon.happyrmmall.mall.util;
 
-import org.springframework.util.StringUtils;
-
-import java.io.Serializable;
 import java.security.MessageDigest;
 
 /**
