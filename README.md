@@ -16,7 +16,7 @@
   11.对接微信支付模块(要注册公司,G!)  
   12.~~使用druid代替c3p0~~  
   13.~~完成Maven环境隔离~~  
-  14.~~完成了spring session的整合工作，解决了集群部署session不共享的问题，实现单点登录~~
+  14.~~完成了spring session的整合工作，解决了集群部署session不共享的问题，实现单点登录~~  
   15.使用SpringTask完成定时关单
 
 
@@ -25,5 +25,5 @@
 # [文档页面](http://document.happyrmmall.cn/swagger-ui/index.html)  
 # [druid监控页面](http://druid.happyrmmall.cn/) 
 
-本项目需要Java-1.8 VsFTP redis-3.0.5 nginx-1.10.2 MySQL-8.0.28 Maven与Git随意
+本项目需要Java-1.8 VsFTP redis-3.0.5 nginx-1.10.2 MySQL-8.0.28 Maven与Git随意  
 #[redis安装流程博客推荐](https://www.cnblogs.com/jiangcong/p/15449452.html)
