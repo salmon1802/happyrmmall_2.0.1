@@ -53,7 +53,6 @@ public class UserController {
      * @param session
      * @return
      */
-
     @ApiOperation("用户登出")
     @RequestMapping(value = "logout.do",method = RequestMethod.POST)
     public ServerResponse<String> logout(HttpSession session) {
