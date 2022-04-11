@@ -29,6 +29,7 @@ import com.salmon.happyrmmall.mall.vo.OrderVo;
 import com.salmon.happyrmmall.mall.vo.ShippingVo;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,8 +91,8 @@ public class OrderServiceImpl implements IOrderService {
      */
     public ServerResponse createOrder(Integer userId,Integer shippingId){
 
-        //从购物车中获取数据
-        List<Cart> cartList = cartMapper.selectCartByUserId(userId);
+        //获取购物车页面中被选中的商品
+        List<Cart> cartList = cartMapper.selectCheckedCartByUserId(userId);
 
         //计算订单总价
         ServerResponse serverResponse = this.getCartOrderItem(userId, cartList);
@@ -343,14 +344,55 @@ public class OrderServiceImpl implements IOrderService {
         updateOrder.setId(order.getId());
         updateOrder.setStatus(Const.OrderStatusEnum.CANCELED.getCode());
 
+        //返还库存
+        returnStock(orderNo);
 
         int row = orderMapper.updateByPrimaryKeySelective(updateOrder);
         if (row > 0) {
             return ServerResponse.createBySuccess();
         }
+
+
         return ServerResponse.createByError();
     }
 
+    /**
+     * 自动关闭超过24小时未付款的订单，返回关闭订单数量
+     * @return
+     */
+    public ServerResponse<Integer> closeTimeoutOrder(){
+        Integer cancelOrderCount = 0;
+        Date closeDataTime = DateUtils.addHours(new Date(), -24); //获得24小时之前的订单创建时间戳
+        List<Order> TimeoutOrderList = orderMapper.selectByStatusAndLessCreateTime(Const.OrderStatusEnum.NO_PAY.getCode(),closeDataTime);
+        if(CollectionUtils.isEmpty(TimeoutOrderList)) {
+           return ServerResponse.createBySuccess(cancelOrderCount);
+        }
+
+        for (Order order : TimeoutOrderList) {
+            cancelOrderCount++;
+            //返还库存数量
+            returnStock(order.getOrderNo());
+            //关闭当前订单
+            orderMapper.closeTimeoutOrder(order.getId());
+            logger.info(new StringBuilder().append("已关闭订单:").append(order.getOrderNo()).toString());
+        }
+        return ServerResponse.createBySuccess(cancelOrderCount);
+    }
+
+    private void returnStock (Long orderNo) {
+        List<OrderItem> orderItemList = orderItemMapper.getByOrderNo(orderNo);
+        //查询订单中所有商品的库存，考虑到orderItem和product表是不同步的所以有可能该产品已被删除，返回一个null，所以使用Integer
+        for (OrderItem orderItem : orderItemList) {
+            Integer stock = productMapper.selectStockByProductId(orderItem.getProductId());
+            if (stock == null) {
+                continue;
+            }
+            Product product = new Product();
+            product.setId(orderItem.getProductId());
+            product.setStock(stock + orderItem.getQuantity());
+            productMapper.updateByPrimaryKeySelective(product);
+        }
+    }
 
     /**
      * 获取购物车中已经被选中的商品信息

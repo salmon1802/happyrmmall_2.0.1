@@ -25,7 +25,7 @@ public class UserServiceImpl implements IUserService {
     private UserMapper userMapper;
 
     @Autowired
-    private IRedisService redisService;
+    private IRedisService iRedisService;
     /**
      * 登录操作
      * @param username
@@ -136,8 +136,8 @@ public class UserServiceImpl implements IUserService {
             //说明问题及问题答案是此用户且是正确的
             String forgetToken = UUID.randomUUID().toString();
 //            TokenCache.setKey(TokenCache.TOKEN_PREFIX+username, forgetToken);
-            redisService.set(Const.TOKEN_PREFIX + username, forgetToken);
-            redisService.expire(Const.TOKEN_PREFIX + username, 12*60*60);
+            iRedisService.set(Const.TOKEN_PREFIX + username, forgetToken);
+            iRedisService.expire(Const.TOKEN_PREFIX + username, 12*60*60);
             return ServerResponse.createBySuccess(forgetToken);
         }
         return ServerResponse.createByErrorMessage("问题的答案错误");
@@ -162,7 +162,7 @@ public class UserServiceImpl implements IUserService {
         }
 
 //        String token = TokenCache.getKey(TokenCache.TOKEN_PREFIX+username);
-        String token = redisService.get(Const.TOKEN_PREFIX + username);
+        String token = iRedisService.get(Const.TOKEN_PREFIX + username);
         if(StringUtils.isBlank(token)){
             return ServerResponse.createByErrorMessage("token无效或者过期");
         }

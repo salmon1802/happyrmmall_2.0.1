@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -30,5 +31,8 @@ public interface OrderMapper {
 
     List<Order> selectAllOrder();
 
+    List<Order> selectByStatusAndLessCreateTime(@Param("status") Integer status, @Param("createTime") Date createTime);
 
+    //<![CDATA[   添加内容   ]]> 跳过xml检测
+    int closeTimeoutOrder(Integer id);
 }

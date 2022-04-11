@@ -17,7 +17,7 @@
   12.~~使用druid代替c3p0~~  
   13.~~完成Maven环境隔离~~  
   14.~~完成了spring session的整合工作，解决了集群部署session不共享的问题，实现单点登录~~  
-  15.使用SpringTask完成定时关单
+  15.~~使用SpringTask完成定时关单~~  
   16.统一权限认证
 
 

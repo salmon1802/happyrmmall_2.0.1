@@ -3,6 +3,7 @@ package com.salmon.happyrmmall.mall.service;
 import com.github.pagehelper.PageInfo;
 import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.vo.OrderVo;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
 
@@ -20,9 +21,15 @@ public interface IOrderService {
 
     ServerResponse queryOrderPayStatus(Integer userId,Long orderNo);
 
+    @Transactional
     ServerResponse createOrder(Integer userId,Integer shippingId);
 
+    @Transactional
     ServerResponse<String> cancel(Integer userId,Long orderNo);
+
+    //自动关闭超过24小时未付款的订单，返回关闭订单数量
+    @Transactional
+    ServerResponse<Integer> closeTimeoutOrder();
 
     ServerResponse getOrderCartProduct(Integer userId);
 
