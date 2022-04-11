@@ -21,6 +21,8 @@
   16.统一权限认证  
   17.nginx均衡负载和tomcat集群部署
 
+  
+  netstat -tlunp 查看centos哪些端口被占用 
 
 # [主页面](http://www.happyrmmall.cn/)   
 # [管理页面](http://admin.happyrmmall.cn)  
