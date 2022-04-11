@@ -38,6 +38,7 @@ public class OrderController {
 
 
     //TODO 发现一个bug当购物车中商品被部分选择时，下单后依旧会清空全部购物车购买所有商品
+    //已解决！
     /**
      * 创建订单
      * @param session

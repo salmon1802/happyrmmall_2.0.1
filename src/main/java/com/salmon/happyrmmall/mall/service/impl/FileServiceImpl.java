@@ -36,14 +36,8 @@ public class FileServiceImpl implements IFileService {
         String uploadFileName = UUID.randomUUID().toString()+"."+fileExtensionName;
 
         StringBuilder info = new StringBuilder();
-        info.append("开始上传文件，上传文件的文件名:{");
-        info.append(fileName);
-        info.append("},上传的路径:{");
-        info.append(path);
-        info.append("},新文件名:{");
-        info.append(uploadFileName);
-        info.append("}");
-//        logger.info("开始上传文件，上传文件的文件名:{},上传的路径:{},新文件名:{}",fileName,path,uploadFileName);
+        info.append("开始上传文件，上传文件的文件名:{").append(fileName).append("},上传的路径:{").
+                append(path).append("},新文件名:{").append(uploadFileName).append("}");
         logger.info(String.valueOf(info));
         File fileDir = new File(path);
         if(!fileDir.exists()){
@@ -58,7 +52,7 @@ public class FileServiceImpl implements IFileService {
             FTPUtil.uploadFile(Lists.newArrayList(targetFile));//将targetFile上传到自己的ftp服务器上
             logger.info("上传成功！！！");
             //上传完之后，删除upload下面的文件
-            //targetFile.delete();
+            targetFile.delete();
         }catch (IOException e){
             logger.error("上传文件异常", e);
             return null;

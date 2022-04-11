@@ -26,7 +26,7 @@
 # [文档页面](http://document.happyrmmall.cn/swagger-ui/index.html)  
 # [druid监控页面](http://druid.happyrmmall.cn/) 
 
-本项目需要Java-1.8 VsFTP redis-3.0.5 nginx-1.10.2 MySQL-8.0.28 Maven与Git随意  
+本项目需要Java-1.8 VsFTP3.0.2 redis-3.0.5 nginx-1.10.2 MySQL-8.0.28 Maven与Git随意  
 ## [redis安装流程博客推荐](https://www.cnblogs.com/jiangcong/p/15449452.html)
 ## [mysql8安装流程博客推荐](https://blog.csdn.net/m0_52652844/article/details/109772177?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2.pc_relevant_paycolumn_v3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2.pc_relevant_paycolumn_v3&utm_relevant_index=5)
 ## 各位安装redis时务必设置密码！！！不要问我为什么知道 [阿里云挖矿病毒介绍](https://developer.aliyun.com/article/741602)

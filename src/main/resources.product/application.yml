@@ -48,8 +48,8 @@ spring:
 
   session:
     store-type: redis #相当于手动添加@EnableRedisHttpSession注释。
-      #这将创建一个名为springSessionRepositoryFilter的Spring bean，
-    #该bean实现了Filter。过滤器负责替换Spring Session支持的HttpSession实现。
+                      #这将创建一个名为springSessionRepositoryFilter的Spring bean，
+                      #该bean实现了Filter。过滤器负责替换Spring Session支持的HttpSession实现。
 
 
   servlet:
@@ -65,13 +65,3 @@ mybatis:
     - classpath:mapper/*Mapper.xml
     - classpath*:com/**/mapper/*Mapper.xml
 
-
-
-
-
-
-
-
-
-
-#druid和redis只是引入还没配置，本项目先搭起来再说
