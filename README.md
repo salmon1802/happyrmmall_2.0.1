@@ -19,7 +19,7 @@
   14.~~完成了spring session的整合工作，解决了集群部署session不共享的问题，实现单点登录~~  
   15.~~使用SpringTask完成定时关单~~  
   16.统一权限认证  
-  17.nginx均衡负载和tomcat集群部署
+  17.~~nginx均衡负载和tomcat集群部署~~
 
   
   netstat -tlunp 查看centos哪些端口被占用 
