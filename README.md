@@ -20,6 +20,7 @@
   15.~~使用SpringTask完成定时关单~~  
   16.统一权限认证  
   17.~~nginx均衡负载和tomcat集群部署~~
+  18.整合Mycat实现分库分表
 
   
   netstat -tlunp 查看centos哪些端口被占用 
