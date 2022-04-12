@@ -6,6 +6,7 @@ target/
 logs/
 /logs
 /append
+append/
 
 ### STS ###
 .apt_generated
