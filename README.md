@@ -33,5 +33,5 @@
 ## [redis安装流程博客推荐](https://www.cnblogs.com/jiangcong/p/15449452.html)
 ## [mysql8安装流程博客推荐](https://blog.csdn.net/m0_52652844/article/details/109772177?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2.pc_relevant_paycolumn_v3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-2.pc_relevant_paycolumn_v3&utm_relevant_index=5)
 ## [vsftpd安装博客及坑](https://blog.csdn.net/Salmon1122/article/details/124112168)
-## 各位安装redis时务必设置密码！！！不要问我为什么知道 [阿里云挖矿病毒介绍](https://developer.aliyun.com/article/741602)
+## 安装redis时务必设置密码！！！不要问我为什么知道 [阿里云挖矿病毒介绍](https://developer.aliyun.com/article/741602)
 
