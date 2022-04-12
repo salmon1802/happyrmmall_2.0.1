@@ -58,7 +58,7 @@ public class ProductManageController {
             //增加产品的业务逻辑
             return iProductService.saveOrUpdateProduct(product);
         }else {
-            return ServerResponse.createByErrorMessage("无操作权限");
+            return ServerResponse.createByErrorMessage("无操作权限，需要管理员权限");
         }
     }
 
@@ -79,7 +79,7 @@ public class ProductManageController {
             //增加产品的业务逻辑
             return iProductService.setSaleStatus(productId,status);
         }else {
-            return ServerResponse.createByErrorMessage("无操作权限");
+            return ServerResponse.createByErrorMessage("无操作权限，需要管理员权限");
         }
     }
 
@@ -100,7 +100,7 @@ public class ProductManageController {
             //增加产品的业务逻辑
             return iProductService.manageProductDetail(productId);
         }else {
-            return ServerResponse.createByErrorMessage("无操作权限");
+            return ServerResponse.createByErrorMessage("无操作权限，需要管理员权限");
         }
     }
 
@@ -122,7 +122,7 @@ public class ProductManageController {
             //增加产品的业务逻辑
             return iProductService.getProductList(pageNum, pageSize);
         }else {
-            return ServerResponse.createByErrorMessage("无操作权限");
+            return ServerResponse.createByErrorMessage("无操作权限，需要管理员权限");
         }
     }
 
@@ -146,7 +146,7 @@ public class ProductManageController {
             //增加产品的业务逻辑
             return iProductService.searchProduct(productName, productId, pageNum, pageSize);
         }else {
-            return ServerResponse.createByErrorMessage("无操作权限");
+            return ServerResponse.createByErrorMessage("无操作权限，需要管理员权限");
         }
     }
 
@@ -173,7 +173,7 @@ public class ProductManageController {
             fileMap.put("url", url);
             return ServerResponse.createBySuccess(fileMap);
         }else {
-            return ServerResponse.createByErrorMessage("无操作权限");
+            return ServerResponse.createByErrorMessage("无操作权限，需要管理员权限");
         }
     }
 
@@ -217,7 +217,7 @@ public class ProductManageController {
             return resultMap;
         }else {
             resultMap.put("success",false);
-            resultMap.put("msg","无权限操作");
+            resultMap.put("msg","无操作权限，需要管理员权限");
             return resultMap;
         }
     }
