@@ -1,9 +1,11 @@
 package com.salmon.happyrmmall.mall.pojo;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 
+@ApiModel
 public class User implements Serializable {
     @ApiModelProperty(value = "用户表id")
     private Integer id;

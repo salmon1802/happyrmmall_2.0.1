@@ -1,5 +1,7 @@
 package com.salmon.happyrmmall.mall.vo;
 
+import io.swagger.annotations.ApiModel;
+
 import java.io.Serializable;
 
 /**
@@ -7,6 +9,8 @@ import java.io.Serializable;
  * @date 2020-12-6 - 15:20
  * Created by Salmon
  */
+
+@ApiModel
 public class ShippingVo implements Serializable {
 
     private String receiverName;

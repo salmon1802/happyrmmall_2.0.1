@@ -6,21 +6,21 @@
   1.~~整合swagger3~~  
   2.整合Elasticsearch  
   3.用docker部署到服务器  
-  4.~~与前端完成管理系统的联调和开发~~  
-  5.整合SpringSecurity和JWT  
-  6.~~使用Redis代替guava本地缓存~~  
-  7.整合OSS实现文件上传（阿里云对象存储服务（Object Storage Service，简称 OSS））  
-  8.实现真正的物流对接？  
-  9.评论区(现在要实名认证,G!)  
-  10.QQ邮箱注册验证以及注册页面优化，现在的又臭又长  
-  11.对接微信支付模块(要注册公司,G!)  
-  12.~~使用druid代替c3p0~~  
-  13.~~完成Maven环境隔离~~  
-  14.~~完成了spring session的整合工作，解决了集群部署session不共享的问题，实现单点登录~~  
-  15.~~使用SpringTask完成定时关单~~  
-  16.统一权限认证  
-  17.~~nginx均衡负载和tomcat集群部署~~  
-  18.整合Mycat实现分库分表
+  4.整合SpringSecurity和JWT  
+  5.~~使用Redis代替guava本地缓存~~  
+  6.整合OSS实现文件上传（阿里云对象存储服务（Object Storage Service，简称 OSS））  
+  7.实现真正的物流对接？  
+  8.评论区(现在要实名认证,G!)  
+  9.QQ邮箱注册验证以及注册页面优化，现在的又臭又长  
+  10.对接微信支付模块(要注册公司,G!)  
+  11.~~使用druid代替c3p0~~  
+  12.~~完成Maven环境隔离~~  
+  13.~~完成了spring session的整合工作，解决了集群部署session不共享的问题，实现单点登录~~  
+  14.~~使用SpringTask完成定时关单~~  
+  15.统一权限认证  
+  16.~~nginx均衡负载和tomcat集群部署~~  
+  17.整合Mycat实现分库分表
+  
 
   
   netstat -tlunp 查看centos哪些端口被占用 

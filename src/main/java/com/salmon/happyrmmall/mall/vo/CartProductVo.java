@@ -1,5 +1,7 @@
 package com.salmon.happyrmmall.mall.vo;
 
+import io.swagger.annotations.ApiModel;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -8,6 +10,8 @@ import java.math.BigDecimal;
  * @date 2020-12-4 - 13:18
  * Created by Salmon
  */
+
+@ApiModel
 public class CartProductVo implements Serializable {
 
     //结合了产品和购物车的一个抽象对象

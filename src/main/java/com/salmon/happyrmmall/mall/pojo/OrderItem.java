@@ -1,10 +1,12 @@
 package com.salmon.happyrmmall.mall.pojo;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+@ApiModel
 public class OrderItem implements Serializable {
     @ApiModelProperty(value = "订单子表id")
     private Integer id;

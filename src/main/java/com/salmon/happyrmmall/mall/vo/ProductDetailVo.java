@@ -1,5 +1,7 @@
 package com.salmon.happyrmmall.mall.vo;
 
+import io.swagger.annotations.ApiModel;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -8,6 +10,7 @@ import java.math.BigDecimal;
  * @date 2020-12-3 - 13:32
  * Created by Salmon
  */
+@ApiModel
 public class ProductDetailVo implements Serializable {
 
     private Integer id;

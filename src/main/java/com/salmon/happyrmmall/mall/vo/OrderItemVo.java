@@ -1,5 +1,7 @@
 package com.salmon.happyrmmall.mall.vo;
 
+import io.swagger.annotations.ApiModel;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -8,6 +10,7 @@ import java.math.BigDecimal;
  * @date 2020-12-6 - 15:16
  * Created by Salmon
  */
+@ApiModel
 public class OrderItemVo implements Serializable {
 
     private Long orderNo;
