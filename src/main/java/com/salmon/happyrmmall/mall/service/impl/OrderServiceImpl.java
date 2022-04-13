@@ -34,6 +34,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
 import java.io.IOException;
@@ -89,6 +90,7 @@ public class OrderServiceImpl implements IOrderService {
      * @param shippingId
      * @return
      */
+    @Transactional
     public ServerResponse createOrder(Integer userId,Integer shippingId){
 
         //获取购物车页面中被选中的商品
@@ -332,6 +334,7 @@ public class OrderServiceImpl implements IOrderService {
      * @param orderNo
      * @return
      */
+    @Transactional
     public ServerResponse<String> cancel(Integer userId,Long orderNo){
         Order order = orderMapper.selectByUserIdAndOrderNo(userId, orderNo);
         if(order == null){
@@ -360,6 +363,7 @@ public class OrderServiceImpl implements IOrderService {
      * 自动关闭超过24小时未付款的订单，返回关闭订单数量
      * @return
      */
+    @Transactional
     public ServerResponse<Integer> closeTimeoutOrder(){
         Integer cancelOrderCount = 0;
         Date closeDataTime = DateUtils.addHours(new Date(), -24); //获得24小时之前的订单创建时间戳
@@ -391,6 +395,8 @@ public class OrderServiceImpl implements IOrderService {
             product.setId(orderItem.getProductId());
             product.setStock(stock + orderItem.getQuantity());
             productMapper.updateByPrimaryKeySelective(product);
+//            int i = 1/0;
+//            用来测试事务管理是否生效
         }
     }
 

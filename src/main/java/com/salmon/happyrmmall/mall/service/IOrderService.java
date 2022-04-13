@@ -21,14 +21,11 @@ public interface IOrderService {
 
     ServerResponse queryOrderPayStatus(Integer userId,Long orderNo);
 
-    @Transactional
     ServerResponse createOrder(Integer userId,Integer shippingId);
 
-    @Transactional
     ServerResponse<String> cancel(Integer userId,Long orderNo);
 
     //自动关闭超过24小时未付款的订单，返回关闭订单数量
-    @Transactional
     ServerResponse<Integer> closeTimeoutOrder();
 
     ServerResponse getOrderCartProduct(Integer userId);
