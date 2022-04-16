@@ -1,5 +1,6 @@
 package com.salmon.happyrmmall.mall.service;
 
+import com.github.pagehelper.PageInfo;
 import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.pojo.User;
 
@@ -29,5 +30,7 @@ public interface IUserService {
      ServerResponse<User> getInformation(Integer userId);
 
      ServerResponse checkAdminRole(User user);
+
+     ServerResponse<PageInfo> getUserList(int pageNum, int pageSize);
 
 }

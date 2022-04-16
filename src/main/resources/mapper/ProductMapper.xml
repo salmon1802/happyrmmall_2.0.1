@@ -224,4 +224,8 @@
         for update
     </select>
 
+    <select id="selectProductCount"  resultType="int">
+        select count(1) from rmmall_product
+    </select>
+
 </mapper>

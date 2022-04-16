@@ -248,17 +248,9 @@
     </update>
 
 
-
-
-
-
-
-
-
-
-
-
-
+    <select id="selectOrderCount" parameterType="int">
+        select count(1) from rmmall_order
+    </select>
 
 
 

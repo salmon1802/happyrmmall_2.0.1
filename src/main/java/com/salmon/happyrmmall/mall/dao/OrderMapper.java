@@ -35,4 +35,6 @@ public interface OrderMapper {
 
     //<![CDATA[   添加内容   ]]> 跳过xml检测
     int closeTimeoutOrder(Integer id);
+
+    int selectOrderCount();
 }

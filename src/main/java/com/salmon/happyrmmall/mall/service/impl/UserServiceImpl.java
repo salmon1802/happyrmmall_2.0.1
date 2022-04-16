@@ -1,5 +1,7 @@
 package com.salmon.happyrmmall.mall.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.salmon.happyrmmall.mall.common.Const;
 import com.salmon.happyrmmall.mall.common.ServerResponse;
 import com.salmon.happyrmmall.mall.common.TokenCache;
@@ -12,6 +14,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -259,7 +263,12 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createByError();
     }
 
-
+    public ServerResponse<PageInfo> getUserList(int pageNum, int pageSize){
+        PageHelper.startPage(pageNum, pageSize);
+        List<User> userList = userMapper.selectAllUsers();
+        PageInfo pageInfo = new PageInfo(userList);
+        return ServerResponse.createBySuccess(pageInfo);
+    }
 
 
 }

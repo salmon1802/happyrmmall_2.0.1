@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @Mapper
 public interface UserMapper {
@@ -35,4 +37,8 @@ public interface UserMapper {
     int checkPassword(@Param("password") String password,@Param("userId") Integer userId);
 
     int checkEmailByUserId(@Param("email") String email,@Param("userId") Integer userId);
+
+    int selectUserCount();
+
+    List<User> selectAllUsers();
 }

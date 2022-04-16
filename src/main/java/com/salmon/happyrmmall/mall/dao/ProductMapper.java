@@ -30,4 +30,6 @@ public interface ProductMapper {
 
     //加入悲观锁防止修改
     Integer selectStockByProductId(Integer id);
+
+    int selectProductCount();
 }
