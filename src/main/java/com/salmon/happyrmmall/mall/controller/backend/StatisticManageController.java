@@ -28,6 +28,7 @@ public class StatisticManageController {
     @Autowired
     private IUserService iUserService;
 
+    @Autowired
     private IStatisticService iStatisticService;
 
     @RequestMapping(value = "base_count.do",method = RequestMethod.GET)
