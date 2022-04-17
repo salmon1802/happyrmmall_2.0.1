@@ -30,7 +30,7 @@ public class StatisticManageController {
 
     private IStatisticService iStatisticService;
 
-    @RequestMapping(value = "base_count.do", method = RequestMethod.GET)
+    @RequestMapping(value = "base_count.do",method = RequestMethod.GET)
     public ServerResponse base_count(HttpSession session){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user == null){

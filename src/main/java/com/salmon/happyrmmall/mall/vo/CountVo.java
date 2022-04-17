@@ -39,4 +39,13 @@ public class CountVo {
     public void setOrderCount(Integer orderCount) {
         this.orderCount = orderCount;
     }
+
+    @Override
+    public String toString() {
+        return "CountVo{" +
+                "userCount=" + userCount +
+                ", productCount=" + productCount +
+                ", orderCount=" + orderCount +
+                '}';
+    }
 }
