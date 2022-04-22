@@ -31,7 +31,7 @@ public class ProductController {
     }
 
     /**
-     * 一个keyword模糊查询，
+     * 一个keyword、类别的模糊查询，
      * @param keyword
      * @param categoryId
      * @param pageNum
@@ -39,7 +39,7 @@ public class ProductController {
      * @param orderBy
      * @return
      */
-    @ApiOperation("分页keyword模糊查询")
+    @ApiOperation("分页keyword/categoryId模糊查询")
     @RequestMapping(value = "list.do",method = RequestMethod.GET)
     public ServerResponse<PageInfo> list(@RequestParam(value = "keyword", required = false) String keyword,
                                          @RequestParam(value = "categoryId", required = false) Integer categoryId,
