@@ -14,7 +14,6 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -73,7 +72,7 @@ public class OrderController {
 
 
     /**
-     * 获取购物车中已经被选中的商品信息
+     * 在订单确认页，获取购物车中已经被选中的商品信息
      * @param session
      * @return
      */
@@ -144,7 +143,6 @@ public class OrderController {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), ResponseCode.NEED_LOGIN.getDesc());
         }
         String path = request.getSession().getServletContext().getRealPath("upload");
-        //这里的拿到的path没有/
         return iOrderService.pay(orderNo, user.getId(), path);
     }
 

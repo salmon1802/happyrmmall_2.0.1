@@ -558,9 +558,14 @@ public class OrderServiceImpl implements IOrderService {
 
         // 创建扫码支付请求builder，设置请求参数
         AlipayTradePrecreateRequestBuilder builder = new AlipayTradePrecreateRequestBuilder()
-                .setSubject(subject).setTotalAmount(totalAmount).setOutTradeNo(outTradeNo)
-                .setUndiscountableAmount(undiscountableAmount).setSellerId(sellerId).setBody(body)
-                .setOperatorId(operatorId).setStoreId(storeId).setExtendParams(extendParams)
+                .setSubject(subject)
+                .setTotalAmount(totalAmount)
+                .setOutTradeNo(outTradeNo)
+                .setUndiscountableAmount(undiscountableAmount)
+                .setSellerId(sellerId).setBody(body)
+                .setOperatorId(operatorId)
+                .setStoreId(storeId)
+                .setExtendParams(extendParams)
                 .setTimeoutExpress(timeoutExpress)
                 .setNotifyUrl(PropertiesUtil.getProperty("alipay.callback.url"))//支付宝服务器主动通知商户服务器里指定的页面http路径,根据需要设置
                 .setGoodsDetailList(goodsDetailList);
@@ -639,7 +644,7 @@ public class OrderServiceImpl implements IOrderService {
         String tradeStatus = params.get("trade_status");
         Order order = orderMapper.selectByOrderNo(orderNo);
         if(order == null){
-            return ServerResponse.createByErrorMessage("非快乐商城的订单，回调忽略");
+            return ServerResponse.createByErrorMessage("非快乐人民商城的订单，回调忽略");
         }
         if(order.getStatus() >= Const.OrderStatusEnum.PAID.getCode()){
             //因为不发success支付宝就会一直调用，所以並不算是失敗，而是成功

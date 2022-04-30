@@ -146,19 +146,6 @@ public class CartServiceImpl implements ICartService {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         /**
          * 按照要求更新购物车，返回更新好的购物车vo对象
          * @param userId
@@ -207,11 +194,12 @@ public class CartServiceImpl implements ICartService {
                         //计算总价
                         cartProductVo.setProductTotalPrice(BigDecimalUtil.mul(product.getPrice().doubleValue(),cartProductVo.getQuantity()));
                         cartProductVo.setProductChecked(cartItem.getChecked());
+                    } else {
+                        return null; //当前购物车中商品不存在
                     }
 
                     if(cartItem.getChecked() == Const.Cart.CHECKED){
                         //如果已经勾选,增加到整个的购物车总价中
-
 
                         //解决空指针异常
                         if(cartProductVo.getProductTotalPrice() == null){

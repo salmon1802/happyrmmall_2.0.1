@@ -15,12 +15,12 @@ import org.springframework.stereotype.Component;
 public class orderTimeoutClosedTask {
 
     @Autowired
-    private IOrderService iorderService;
+    private IOrderService iOrderService;
 
 
     @Scheduled(cron = "0 0/10 * ? * ?") //每十分钟扫描一次，未支付则取消订单
     private void closeTimeoutOrder(){
-        Integer count = iorderService.closeTimeoutOrder().getData();
+        Integer count = iOrderService.closeTimeoutOrder().getData();
         log.info(new StringBuilder().append("取消订单并更新商品库存,订单取消数量为:").append(count).toString());
     }
 }
