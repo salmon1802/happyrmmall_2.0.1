@@ -26,7 +26,7 @@
   netstat -tlunp 查看centos哪些端口被占用 
 
 # [主页面](http://www.happyrmmall.cn/)   
-# [管理页面](http://admin.happyrmmall.cn)  
+# [管理页面](http://adminv2.happyrmmall.cn/)  
 # [文档页面](http://document.happyrmmall.cn/swagger-ui/index.html)  
 # [druid监控页面](http://druid.happyrmmall.cn/) 
 
