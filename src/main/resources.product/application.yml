@@ -5,7 +5,7 @@ server:
       timeout: 1800 #If a duration suffix is not specified, seconds is used.
       cookie:
         path: /     #设置SessionId存放在Cookie中的什么路径中 /表示根路径，用于解决同域名下不同项目的Session共享
-        domain: happyrmmall.cn
+        domain: wclmall.top
                     #设置SessionId存放在Cookie中的根域名，用于解决同根域名不同二级子域名的Session共享
 
 spring:
